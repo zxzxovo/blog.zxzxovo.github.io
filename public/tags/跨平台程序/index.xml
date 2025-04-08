@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>跨平台程序 on Zhixia&#39;s Blog</title>
+        <link>http://localhost:1313/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A8%8B%E5%BA%8F/</link>
+        <description>Recent content in 跨平台程序 on Zhixia&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>zhixia</copyright>
+        <lastBuildDate>Sat, 05 Apr 2025 00:41:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用Tauri开发跨平台应用</title>
+        <link>http://localhost:1313/post/%E4%BD%BF%E7%94%A8tauri%E5%BC%80%E5%8F%91%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8/</link>
+        <pubDate>Sat, 05 Apr 2025 00:41:44 +0800</pubDate>
+        
+        <guid>http://localhost:1313/post/%E4%BD%BF%E7%94%A8tauri%E5%BC%80%E5%8F%91%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8/</guid>
+        <description>&lt;img src="http://localhost:1313/post/%E4%BD%BF%E7%94%A8tauri%E5%BC%80%E5%8F%91%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BA%94%E7%94%A8/navigation.jpg" alt="Featured image of post 使用Tauri开发跨平台应用" /&gt;&lt;p&gt;本文参考内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;Tauri&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Clap on Zhixia&#39;s Blog</title>
-        <link>https://hizhixia.site/tags/clap/</link>
+        <link>https://blog.hizhixia.site/tags/clap/</link>
         <description>Recent content in Clap on Zhixia&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zhixia</copyright>
-        <lastBuildDate>Wed, 12 Feb 2025 20:40:22 +0800</lastBuildDate><atom:link href="https://hizhixia.site/tags/clap/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 12 Feb 2025 20:40:22 +0800</lastBuildDate><atom:link href="https://blog.hizhixia.site/tags/clap/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Clap的一些用法</title>
-        <link>https://hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/</link>
+        <link>https://blog.hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/</link>
         <pubDate>Wed, 12 Feb 2025 20:40:22 +0800</pubDate>
         
-        <guid>https://hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/</guid>
-        <description>&lt;img src="https://hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg" alt="Featured image of post Clap的一些用法" /&gt;&lt;p&gt;Rust的 &lt;a class=&#34;link&#34; href=&#34;https://crates.io/crates/clap&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>https://blog.hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg" alt="Featured image of post Clap的一些用法" /&gt;&lt;p&gt;Rust的 &lt;a class=&#34;link&#34; href=&#34;https://crates.io/crates/clap&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Clap Crate&lt;/a&gt; 非常适用于开发命令行程序，它是一个“简单易用、高效且功能齐全的命令行参数解析器”。&lt;/p&gt;
 &lt;p&gt;Clap的作用在于帮助我们定义命令行工具的各种指令和用法，并解析用户使用的什么指令。之后我们只需要编写对应指令的功能代码即可。&lt;/p&gt;
 &lt;p&gt;在这里简单记录一下它的一些用法。&lt;/p&gt;
