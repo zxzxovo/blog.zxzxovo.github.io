@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="教一位朋友学进制转换时的一些笔记">
+<title>进制转换</title>
+
+<link rel='canonical' href='https://hizhixia.site/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="进制转换">
+<meta property='og:description' content="教一位朋友学进制转换时的一些笔记">
+<meta property='og:url' content='https://hizhixia.site/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/'>
+<meta property='og:site_name' content='Zhixia&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Math' /><meta property='article:tag' content='Code' /><meta property='article:tag' content='进制转换' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='笔记' /><meta property='article:tag' content='学习' /><meta property='article:published_time' content='2025-02-20T00:40:47&#43;08:00'/><meta property='article:modified_time' content='2025-02-20T00:40:47&#43;08:00'/>
+<meta name="twitter:site" content="@@zxzxovo">
+    <meta name="twitter:creator" content="@@zxzxovo"><meta name="twitter:title" content="进制转换">
+<meta name="twitter:description" content="教一位朋友学进制转换时的一些笔记">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-470W7HLJ27"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-470W7HLJ27');
+        }
+      </script>
+
+ 
+<style type="text/css">
+    .menu-social svg, #main-menu-li-svg-map {
+        fill: currentColor;
+    }
+    html[data-scheme="dark"] .menu-social svg, #main-menu-li-svg-map {
+        fill: currentColor;
+    }
+
+
+    html[data-scheme="dark"] .menav-navp-card p {
+        color: #bbb;
+    }
+    .menav-navp-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    span.art-tags {
+        color: white;
+        background-color: #a64acf;
+        border: 4px solid #a64acf;
+        border-radius: 15px;
+        padding: 0% 2%;
+  }
+</style>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7819682643742139"
+     crossorigin="anonymous"></script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar3_hu_8f8c691b8d7aa7b7.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😌</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Zhixia&#39;s Blog</a></h1>
+            <h2 class="site-description">Hi! 这里是我的小空间，欢迎常来做客！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zxzxovo'
+                        target="_blank"
+                        title="Github"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" >
+<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+<path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:zhixiaovo@gmail.com'
+                        target="_blank"
+                        title="Gmail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.pixiv.net/users/114982899'
+                        target="_blank"
+                        title="Pixiv"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm171.5 84c41 0 76.3 12.9 101.4 35.2l0 0c25.2 22.2 39.8 54.1 39.8 88.8c.1 35.3-16.6 66.3-42.4 87c-25.9 20.8-60.6 32.4-98.8 32.4c-43.5 0-83.8-16.1-83.8-16.1v51.8c7.4 2.2 19.7 7 11.9 14.8H104.8c-7.7-7.8 3.6-12.4 12.1-14.8V175.5C97.1 190.9 87 204.3 81.8 214.2c6 19.4-5.3 18.5-5.3 18.5L56 199.7s72.7-83.7 179.5-83.7zm-3.6 222.9c30 0 56-11.3 73.9-29.2c17.9-18.1 27.9-41.6 28-70.2c-.1-29.3-9.5-54.6-26.7-73.6c-17.2-18.9-42.7-31.3-75.2-31.4c-26.7-.1-59.8 9-80.2 23.7V323.1c18.6 9.3 46.8 15.9 80.2 15.8z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/zxzxovo'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                <form action="/page/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#进制表示法">进制表示法</a></li>
+    <li><a href="#进制转换">进制转换</a>
+      <ol>
+        <li><a href="#转换为十进制">转换为十进制</a></li>
+        <li><a href="#转换为n进制">转换为n进制</a></li>
+        <li><a href="#二八十六进制的转换">二、八、十六进制的转换</a></li>
+        <li><a href="#二进制与十六进制转换表">二进制与十六进制转换表</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/math/" style="background-color: #714cfe; color: #fff;">
+                Math
+            </a>
+        
+            <a href="/categories/code/" style="background-color: #1fa0ff; color: #fff;">
+                Code
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">进制转换</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            教一位朋友学进制转换时的一些笔记
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 20, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="进制表示法">进制表示法
+</h1><p>计数时为了方便表示大的数量，因此采用进制表示法计数。</p>
+<p><span class="art-tags">#n进制计数法</span></p>
+<p>$n$ 进制计数法 代表的意思有：</p>
+<ol>
+<li>数到第 $n$ 个数就进位（如：0, 1, 2, 3, 4, 5, 6,  7, 8, 9，9是第十个数，数下一个数时就会进一位，即10。）</li>
+<li>一共只有 $n$ 个不同的符号（比如十进制只有0到9，共10个数字。二进制只有0和1，共2个数字。）</li>
+<li>一个数位上的数字可以选取 $n$ 个值，例如某个十进制表示数的个位可能取0到9这十个种的任意一个，有10种可能。
+因此，一个n进制表示数如果有1位，则有 $n$ 种可能。有2位，则有 $n \times n = n^2$ 种可能，以此类推，如果有 $x$ 位，则有 $n \times n \times &hellip;&hellip; \times n = n^x$ 种可能。
+也即，$x$ 位的  $n$ 进制表示数一共可以表示 $n^x$ 个数。比如一个2位的10进制数，可以表示从0到99一共100 ($10^2=100$)个数，一个4位的2进制数，可以表示从0到 1111 共 16 ($2^4=16$)个数。</li>
+</ol>
+<p><span class="art-tags">#多个数位的产生</span></p>
+<p>在计数时，满了n就进一位，意思是着这时一位能表示的数字已经表示完了（n进制的n个数字已经用完了），所以才会 <strong>多用一位</strong> 来表达。比如数某个东西的数量，使用十进制，先用一位数，数到9时，已经不能表示更多了，所以多加一位来表示，这时就会进位，变成一个2位数 10。这时继续计数，到19时，个位又不能表示更多了，于是继续进位，变成20。当数到99时，这时个位不能表示更多，发生进位，十位也不能表示更多，于是继续进位，此时就会有三位的数字了。</p>
+<p><span class="art-tags">#通用一些的表示</span></p>
+<p>可以看出来，一位数每一位表示1个数字，一共能表示10个数字，而两位数中的十位是个位表示完它能表示的十个数字之后进位产生的，因此一个两位数的十位表示10个数字。比如一个两位数63，它表示的实际数量是$6\times{10}+3$。
+这里的 “个位十位” 的称呼是十进制专属的，对于所有进制表示法，一般用 <strong>“第0位，第1位”</strong> 表示。同时，每一位数字的值用 $d_0, d_1, &hellip;$表示。
+例如，十进制数字 $234$ 的第0位数字 $d_0=4$，第一位数字 $d_1=3$，第二位数字 $d_2=2$ 。</p>
+<p>以此类推，n进制表示法中，第0位数字表示的<strong>实际数量</strong>是 $d_0$，第1位数字表示的<strong>实际数量</strong>是 $d_1 \times{n}$ ，第2位数字表示的<strong>实际数量</strong>是 $d_2\times{n}\times{n}$ 。</p>
+<p><span class="art-tags">#通用表示（按权展开）</span></p>
+<p>现在得到通用的表示，在 $n$ 进制表示法中，用 $D$ 表示一个数字表示的实际数量，则对于任意一个 $m$ 位的数字来说，都有:
+$$
+D = d_m\times{n^m} + d_{m-1}\times{n^{m-1}} + \dots + d_2\times{n^{2}} + d_1\times{n^{1} + d_0\times{n^0}}
+$$</p>
+<p>因为我们是使用十进制进行计数的，我们使用的加法和乘法以及乘方都是十进制的，包括上面这个通用表示在描述时也是使用十进制表示实际数量的。</p>
+<p><span class="art-tags">#转换为十进制</span> 所以对于任何一个n进制数，<strong>带入该通用表示</strong> 即可得到它表示的 <strong>十进制数的实际数量</strong>。</p>
+<p><span class="art-tags">#转换为任意进制</span> 如果我们在这个通用表示中使用的是n进制，那我们只要<strong>使用n进制的数字表示，加法，乘法和乘方</strong>，那么我们只要带入该通用表示，就可以得到任何表示法表示的<strong>n进制数的实际数量</strong>。</p>
+<h1 id="进制转换">进制转换
+</h1><h2 id="转换为十进制">转换为十进制
+</h2><p>因为我们使用的就是十进制，所以先学习<strong>通用表示法转换为十进制</strong>：</p>
+<p><span class="art-tags">#二进制转换为十进制</span></p>
+<p>二进制<code>100111</code> 转十进制39：
+$$
+D= 1 \times 2^5 + 0 \times 2^4 + 0 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 1 \times 2^0
+= 32 + 0 + 0 + 4 + 2 + 1 = 39_{10}
+$$
+​
+<span class="art-tags">#八进制转换为十进制</span></p>
+<p>八进制<code>124</code> 转十进制84：
+$$
+D = 1 \times 8^2 + 2 \times 8^1 + 4 \times 8^0
+= 64 + 16 + 4 = 84_{10}
+$$</p>
+<p><span class="art-tags">#十六进制转换为十进制</span></p>
+<p>十六进制<code>3E8₁₆</code> 转十进制1000：
+$$
+D = 3 \times 16^2 + 14 \times 16^1 + 8 \times 16^0
+= 768 + 224 + 8 = 1000_{10}​
+$$</p>
+<h2 id="转换为n进制">转换为n进制
+</h2><blockquote>
+<p>这里首先介绍使用的是 <strong>通用表示法</strong>，假设我们要将 <strong>n</strong> 进制数转换 <strong>m</strong> 进制数，为使用通用表示法，<strong>首先要求</strong> 我们能把n进制表示法的<strong>n个数字以及这个n，用m进制表示</strong>（比如十进制转换为二进制时，需要知道0到10的二进制表示）。</p>
+<p><strong>不要问为什么十进制表示法没这个要求，因为我们已经能把二进制，八进制，十六进制以及许多其他进制用十进制数字表示了</strong> 0v0 。回头看看上方通用表示法下面的 #转换为任意进制 的说明。</p>
+<p><strong>Tips</strong>: n进制的乘法可以使用竖式计算（各位相乘，各行累加，进位）</p>
+</blockquote>
+<p>以下为一个通用表示法的示例，由于要转换为m进制，就要学习n进制的乘法对于人来说比较麻烦，因此只做演示。
+但对于常用的 <strong>二进制和十进制的转换</strong> 来说，已经足够了。</p>
+<p><span class="art-tags">#十进制转换为二进制</span></p>
+<p><span class="art-tags">#通用表示法（按权展开）</span></p>
+<p>十进制数<code>39</code>转换为二进制100111（0到10的二进制表示在文尾）：
+$$
+D = 11 \times 1010^{1} + 1001 \times 1010^{0}
+= 11110 + 1001
+= 100111_2
+$$</p>
+<p>另一种十进制转换为二进制的方法是 <strong>除以2取余法</strong>，即十进制数除以2，然后取其余数（只可能是1或0）作为低位，逐步相除排列直到商为0时停止。</p>
+<p><span class="art-tags">#除以2取余法</span></p>
+<p>还是十进制数<code>39</code>：
+$$
+39 \div 2 = 19 \dots 1
+$$
+$$
+19 \div 2 = 9 \dots 1
+$$
+$$
+9 \div 2 = 4 \dots 1
+$$
+$$
+4 \div 2 = 2 \dots 0
+$$
+$$
+2 \div 2 = 1 \dots 0
+$$
+$$
+1 \div 2 = 0 \dots 1
+$$</p>
+<p>排列余数，得<code>100111</code> 。</p>
+<h2 id="二八十六进制的转换">二、八、十六进制的转换
+</h2><p>很显然 8 和 16 分别是 $2^3, 2^4$，结合前面所说的，可以知道八进制的一位可以表示的实际数量需要二进制的三位来表示，十六进制的一位则需要用二进制的四位来表示。因此它们可以很方便地与二进制互相转换。</p>
+<p>这种方便在于，碰到比较长的数字时，转换起来比十进制的转换更快更 <strong>解压</strong> 。</p>
+<p><span class="art-tags">#二进制与十六进制</span></p>
+<p>因为1位十六进制需要用4位二进制表示，当你大概记得一些十六进制数字的二进制表示时，你会很快地得到转换结果。
+比如：</p>
+<p>二进制<code>10 1001 0111 1010 1011</code>转换为十六进制：冒号后面没啥步骤了，直接按顺序写出来是 <code>297AB</code> 。</p>
+<p>十六进制<code>3F8A</code>转换为二进制：<code>11 1111 1000 1010</code> 。</p>
+<p>八进制也是同理。</p>
+<h2 id="二进制与十六进制转换表">二进制与十六进制转换表
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">二进制 (4-bit)</th>
+          <th style="text-align: center">十六进制 (Hex)</th>
+          <th style="text-align: center">十进制 (Dec)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0000</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0001</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0010</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0011</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">3</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0100</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: center">4</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0101</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: center">5</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0110</td>
+          <td style="text-align: center">6</td>
+          <td style="text-align: center">6</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0111</td>
+          <td style="text-align: center">7</td>
+          <td style="text-align: center">7</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1000</td>
+          <td style="text-align: center">8</td>
+          <td style="text-align: center">8</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1001</td>
+          <td style="text-align: center">9</td>
+          <td style="text-align: center">9</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1010</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">10</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1011</td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">11</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1100</td>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">12</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1101</td>
+          <td style="text-align: center">D</td>
+          <td style="text-align: center">13</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1110</td>
+          <td style="text-align: center">E</td>
+          <td style="text-align: center">14</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1111</td>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">15</td>
+      </tr>
+  </tbody>
+</table></div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/math/">Math</a>
+        
+            <a href="/tags/code/">Code</a>
+        
+            <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">进制转换</a>
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+        
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/">
+        
+        
+            <div class="article-image">
+                <img src="/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation.34917b969193928c586023f0b971ae38_hu_5d038c56175afbe2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 再学一遍Git"
+                        data-key="再学一遍Git" 
+                        data-hash="md5-NJF7lpGTkoxYYCPwuXGuOA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">再学一遍Git</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/">
+        
+        
+            <div class="article-image">
+                <img src="/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.f33ea36ab65d6186be4d6f672205416e_hu_e26ddc2fdf8c1a4f.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Rust的函数式编程— 闭包"
+                        
+                        data-hash="md5-8z6jarZdYYa&#43;TW9nIgVBbg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust的函数式编程— 闭包</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg" loading="lazy" data-key="Clap的一些用法" data-hash="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Clap的一些用法</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="zxzxovo/zxzxovo.github.io"
+    data-repo-id=""
+    data-category="General"
+    data-category-id=""
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 zhixia
+    </section>
+    
+    <section class="powerby">
+        
+            "一天云破碎，两树玉扶疏" <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

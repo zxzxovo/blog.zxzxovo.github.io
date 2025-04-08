@@ -1,0 +1,135 @@
+# base config
+baseURL = 'https://blog.hizhixia.site/'
+title = "Zhixia's Blog"
+theme = "hugo-theme-stack"
+copyright = "zhixia"
+
+languageCode = 'zh-cn'
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+
+# disqusShortname = "hugo-theme-stack"
+# [services]
+[services.googleAnalytics]
+ID = 'G-470W7HLJ27'
+
+[pagination]
+pagerSize = 5
+
+# [menu]
+[menu]
+social = [
+    { identifier = "rss", name = "RSS", url = "/index.xml", params = { icon = "rss" } },
+    { identifier = "github", name = "Github", url = "https://github.com/zxzxovo", params = { icon = "github" } },
+    { identifier = "X", name = "X", url = "https://x.com/zxzxovo", params = { icon = "x-twitter" } },
+    { identifier = "mail", name = "Gmail", url = "mailto:zhixiaovo@gmail.com", params = { icon = "envelope" } },
+    { identifier = "pixiv", name = "Pixiv", url = "https://www.pixiv.net/users/114982899", params = { icon = "pixiv" } }
+]
+
+# [markup]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  endLevel = 6
+  ordered = true
+  startLevel = 1
+
+[markup.highlight]
+  noClasses = false
+  codeFences = true
+  guessSyntax = true
+  lineNoStart = 1
+  lineNos = true
+  lineNumbersInTable = true
+  tabWidth = 4
+
+
+# [params]
+[params]
+favicon = "/favicon.ico"
+faviconSVG = "/favicon.svg"
+mainSections = [ "post" ]
+featuredImageField = "image"
+rssFullContent = true
+
+[params.sidebar]
+subtitle = "Blog HERE！"
+compact = false
+emoji = "😌"
+
+[params.sidebar.avatar]
+enable = true
+local = true
+src = "img/avatar3.jpg"
+
+[params.footer]
+since = 2025
+customText = "\"一天云破碎，两树玉扶疏\""
+
+[params.article]
+math = true
+toc = true
+readingTime = true
+
+[params.widgets]
+page = [
+    { type = "search" },
+    { type = "toc" },
+]
+homepage = [
+    { type = "search" },
+    { type = "archives" },
+    { type = "categories" },
+    { type = "tag-cloud" },
+]
+
+[params.colorScheme]
+toggle = true
+default = "auto"
+
+[params.imageProcessing.cover]
+enabled = true
+
+[params.imageProcessing.content]
+enabled = true
+
+# [comments system]
+[params.comments]
+enabled = true
+provider = "giscus"
+
+[params.comments.giscus]
+repo = "zxzxovo/zxzxovo.github.io"
+repo-id = "R_kgDONxTewg"
+category = "General"
+category-id = "DIC_kwDONxTews4CmeWY"
+mapping = "pathname"
+light-theme = true
+dark-theme = true
+strict = 0
+reactions-enabled = 1
+emit-metadata = 0
+input-position = "bottom"
+theme = "preferred_color_scheme"
+lang = "zh-CN"
+loading = "lazy"
+crossorigin = "anonymous"
+
+[params.opengraph.twitter]
+site = "@zxzxovo"
+card = "summary_large_image"
+
+# [related]
+[related]
+includeNewer = true
+threshold = 60
+toLower = false
+
+[[related.indices]]
+name = "tags"
+weight = 100
+
+[[related.indices]]
+name = "categories"
+weight = 200

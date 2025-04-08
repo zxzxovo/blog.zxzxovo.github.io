@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Math on Zhixia&#39;s Blog</title>
+        <link>https://hizhixia.site/tags/math/</link>
+        <description>Recent content in Math on Zhixia&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>zhixia</copyright>
+        <lastBuildDate>Thu, 20 Feb 2025 00:40:47 +0800</lastBuildDate><atom:link href="https://hizhixia.site/tags/math/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>进制转换</title>
+        <link>https://hizhixia.site/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</link>
+        <pubDate>Thu, 20 Feb 2025 00:40:47 +0800</pubDate>
+        
+        <guid>https://hizhixia.site/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</guid>
+        <description>&lt;h1 id=&#34;进制表示法&#34;&gt;进制表示法
+&lt;/h1&gt;&lt;p&gt;计数时为了方便表示大的数量，因此采用进制表示法计数。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#n进制计数法&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$n$ 进制计数法 代表的意思有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数到第 $n$ 个数就进位（如：0, 1, 2, 3, 4, 5, 6,  7, 8, 9，9是第十个数，数下一个数时就会进一位，即10。）&lt;/li&gt;
+&lt;li&gt;一共只有 $n$ 个不同的符号（比如十进制只有0到9，共10个数字。二进制只有0和1，共2个数字。）&lt;/li&gt;
+&lt;li&gt;一个数位上的数字可以选取 $n$ 个值，例如某个十进制表示数的个位可能取0到9这十个种的任意一个，有10种可能。
+因此，一个n进制表示数如果有1位，则有 $n$ 种可能。有2位，则有 $n \times n = n^2$ 种可能，以此类推，如果有 $x$ 位，则有 $n \times n \times &amp;hellip;&amp;hellip; \times n = n^x$ 种可能。
+也即，$x$ 位的  $n$ 进制表示数一共可以表示 $n^x$ 个数。比如一个2位的10进制数，可以表示从0到99一共100 ($10^2=100$)个数，一个4位的2进制数，可以表示从0到 1111 共 16 ($2^4=16$)个数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#多个数位的产生&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;在计数时，满了n就进一位，意思是着这时一位能表示的数字已经表示完了（n进制的n个数字已经用完了），所以才会 &lt;strong&gt;多用一位&lt;/strong&gt; 来表达。比如数某个东西的数量，使用十进制，先用一位数，数到9时，已经不能表示更多了，所以多加一位来表示，这时就会进位，变成一个2位数 10。这时继续计数，到19时，个位又不能表示更多了，于是继续进位，变成20。当数到99时，这时个位不能表示更多，发生进位，十位也不能表示更多，于是继续进位，此时就会有三位的数字了。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#通用一些的表示&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;可以看出来，一位数每一位表示1个数字，一共能表示10个数字，而两位数中的十位是个位表示完它能表示的十个数字之后进位产生的，因此一个两位数的十位表示10个数字。比如一个两位数63，它表示的实际数量是$6\times{10}+3$。
+这里的 “个位十位” 的称呼是十进制专属的，对于所有进制表示法，一般用 &lt;strong&gt;“第0位，第1位”&lt;/strong&gt; 表示。同时，每一位数字的值用 $d_0, d_1, &amp;hellip;$表示。
+例如，十进制数字 $234$ 的第0位数字 $d_0=4$，第一位数字 $d_1=3$，第二位数字 $d_2=2$ 。&lt;/p&gt;
+&lt;p&gt;以此类推，n进制表示法中，第0位数字表示的&lt;strong&gt;实际数量&lt;/strong&gt;是 $d_0$，第1位数字表示的&lt;strong&gt;实际数量&lt;/strong&gt;是 $d_1 \times{n}$ ，第2位数字表示的&lt;strong&gt;实际数量&lt;/strong&gt;是 $d_2\times{n}\times{n}$ 。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#通用表示（按权展开）&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;现在得到通用的表示，在 $n$ 进制表示法中，用 $D$ 表示一个数字表示的实际数量，则对于任意一个 $m$ 位的数字来说，都有:
+$$
+D = d_m\times{n^m} + d_{m-1}\times{n^{m-1}} + \dots + d_2\times{n^{2}} + d_1\times{n^{1} + d_0\times{n^0}}
+$$&lt;/p&gt;
+&lt;p&gt;因为我们是使用十进制进行计数的，我们使用的加法和乘法以及乘方都是十进制的，包括上面这个通用表示在描述时也是使用十进制表示实际数量的。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#转换为十进制&lt;/span&gt; 所以对于任何一个n进制数，&lt;strong&gt;带入该通用表示&lt;/strong&gt; 即可得到它表示的 &lt;strong&gt;十进制数的实际数量&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#转换为任意进制&lt;/span&gt; 如果我们在这个通用表示中使用的是n进制，那我们只要&lt;strong&gt;使用n进制的数字表示，加法，乘法和乘方&lt;/strong&gt;，那么我们只要带入该通用表示，就可以得到任何表示法表示的&lt;strong&gt;n进制数的实际数量&lt;/strong&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;进制转换&#34;&gt;进制转换
+&lt;/h1&gt;&lt;h2 id=&#34;转换为十进制&#34;&gt;转换为十进制
+&lt;/h2&gt;&lt;p&gt;因为我们使用的就是十进制，所以先学习&lt;strong&gt;通用表示法转换为十进制&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#二进制转换为十进制&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;二进制&lt;code&gt;100111&lt;/code&gt; 转十进制39：
+$$
+D= 1 \times 2^5 + 0 \times 2^4 + 0 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 1 \times 2^0
+= 32 + 0 + 0 + 4 + 2 + 1 = 39_{10}
+$$
+​
+&lt;span class=&#34;art-tags&#34;&gt;#八进制转换为十进制&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;八进制&lt;code&gt;124&lt;/code&gt; 转十进制84：
+$$
+D = 1 \times 8^2 + 2 \times 8^1 + 4 \times 8^0
+= 64 + 16 + 4 = 84_{10}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#十六进制转换为十进制&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;十六进制&lt;code&gt;3E8₁₆&lt;/code&gt; 转十进制1000：
+$$
+D = 3 \times 16^2 + 14 \times 16^1 + 8 \times 16^0
+= 768 + 224 + 8 = 1000_{10}​
+$$&lt;/p&gt;
+&lt;h2 id=&#34;转换为n进制&#34;&gt;转换为n进制
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;这里首先介绍使用的是 &lt;strong&gt;通用表示法&lt;/strong&gt;，假设我们要将 &lt;strong&gt;n&lt;/strong&gt; 进制数转换 &lt;strong&gt;m&lt;/strong&gt; 进制数，为使用通用表示法，&lt;strong&gt;首先要求&lt;/strong&gt; 我们能把n进制表示法的&lt;strong&gt;n个数字以及这个n，用m进制表示&lt;/strong&gt;（比如十进制转换为二进制时，需要知道0到10的二进制表示）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不要问为什么十进制表示法没这个要求，因为我们已经能把二进制，八进制，十六进制以及许多其他进制用十进制数字表示了&lt;/strong&gt; 0v0 。回头看看上方通用表示法下面的 #转换为任意进制 的说明。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tips&lt;/strong&gt;: n进制的乘法可以使用竖式计算（各位相乘，各行累加，进位）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以下为一个通用表示法的示例，由于要转换为m进制，就要学习n进制的乘法对于人来说比较麻烦，因此只做演示。
+但对于常用的 &lt;strong&gt;二进制和十进制的转换&lt;/strong&gt; 来说，已经足够了。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#十进制转换为二进制&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#通用表示法（按权展开）&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;十进制数&lt;code&gt;39&lt;/code&gt;转换为二进制100111（0到10的二进制表示在文尾）：
+$$
+D = 11 \times 1010^{1} + 1001 \times 1010^{0}
+= 11110 + 1001
+= 100111_2
+$$&lt;/p&gt;
+&lt;p&gt;另一种十进制转换为二进制的方法是 &lt;strong&gt;除以2取余法&lt;/strong&gt;，即十进制数除以2，然后取其余数（只可能是1或0）作为低位，逐步相除排列直到商为0时停止。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#除以2取余法&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;还是十进制数&lt;code&gt;39&lt;/code&gt;：
+$$
+39 \div 2 = 19 \dots 1
+$$
+$$
+19 \div 2 = 9 \dots 1
+$$
+$$
+9 \div 2 = 4 \dots 1
+$$
+$$
+4 \div 2 = 2 \dots 0
+$$
+$$
+2 \div 2 = 1 \dots 0
+$$
+$$
+1 \div 2 = 0 \dots 1
+$$&lt;/p&gt;
+&lt;p&gt;排列余数，得&lt;code&gt;100111&lt;/code&gt; 。&lt;/p&gt;
+&lt;h2 id=&#34;二八十六进制的转换&#34;&gt;二、八、十六进制的转换
+&lt;/h2&gt;&lt;p&gt;很显然 8 和 16 分别是 $2^3, 2^4$，结合前面所说的，可以知道八进制的一位可以表示的实际数量需要二进制的三位来表示，十六进制的一位则需要用二进制的四位来表示。因此它们可以很方便地与二进制互相转换。&lt;/p&gt;
+&lt;p&gt;这种方便在于，碰到比较长的数字时，转换起来比十进制的转换更快更 &lt;strong&gt;解压&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#二进制与十六进制&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;因为1位十六进制需要用4位二进制表示，当你大概记得一些十六进制数字的二进制表示时，你会很快地得到转换结果。
+比如：&lt;/p&gt;
+&lt;p&gt;二进制&lt;code&gt;10 1001 0111 1010 1011&lt;/code&gt;转换为十六进制：冒号后面没啥步骤了，直接按顺序写出来是 &lt;code&gt;297AB&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;十六进制&lt;code&gt;3F8A&lt;/code&gt;转换为二进制：&lt;code&gt;11 1111 1000 1010&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;八进制也是同理。&lt;/p&gt;
+&lt;h2 id=&#34;二进制与十六进制转换表&#34;&gt;二进制与十六进制转换表
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;二进制 (4-bit)&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;十六进制 (Hex)&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;十进制 (Dec)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0000&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0001&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0010&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0011&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0100&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0101&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0110&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;6&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0111&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1000&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1001&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;9&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1010&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;A&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1011&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;B&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;11&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1100&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;C&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;12&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1101&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;D&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;13&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1110&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;E&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;14&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1111&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;F&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;15&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

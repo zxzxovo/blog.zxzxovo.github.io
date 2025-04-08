@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Git命令快查册或备忘录或半个指南">
+<title>再学一遍Git</title>
+
+<link rel='canonical' href='https://hizhixia.site/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="再学一遍Git">
+<meta property='og:description' content="Git命令快查册或备忘录或半个指南">
+<meta property='og:url' content='https://hizhixia.site/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/'>
+<meta property='og:site_name' content='Zhixia&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Git' /><meta property='article:tag' content='Code' /><meta property='article:tag' content='Tools' /><meta property='article:tag' content='学习' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2025-02-08T20:25:00&#43;08:00'/><meta property='article:modified_time' content='2025-02-08T20:25:00&#43;08:00'/><meta property='og:image' content='https://hizhixia.site/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation.png' />
+<meta name="twitter:site" content="@@zxzxovo">
+    <meta name="twitter:creator" content="@@zxzxovo"><meta name="twitter:title" content="再学一遍Git">
+<meta name="twitter:description" content="Git命令快查册或备忘录或半个指南"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://hizhixia.site/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation.png' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-470W7HLJ27"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-470W7HLJ27');
+        }
+      </script>
+
+ 
+<style type="text/css">
+    .menu-social svg, #main-menu-li-svg-map {
+        fill: currentColor;
+    }
+    html[data-scheme="dark"] .menu-social svg, #main-menu-li-svg-map {
+        fill: currentColor;
+    }
+
+
+    html[data-scheme="dark"] .menav-navp-card p {
+        color: #bbb;
+    }
+    .menav-navp-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    span.art-tags {
+        color: white;
+        background-color: #a64acf;
+        border: 4px solid #a64acf;
+        border-radius: 15px;
+        padding: 0% 2%;
+  }
+</style>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7819682643742139"
+     crossorigin="anonymous"></script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar3_hu_8f8c691b8d7aa7b7.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😌</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Zhixia&#39;s Blog</a></h1>
+            <h2 class="site-description">Hi! 这里是我的小空间，欢迎常来做客！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zxzxovo'
+                        target="_blank"
+                        title="Github"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" >
+<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+<path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:zhixiaovo@gmail.com'
+                        target="_blank"
+                        title="Gmail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.pixiv.net/users/114982899'
+                        target="_blank"
+                        title="Pixiv"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm171.5 84c41 0 76.3 12.9 101.4 35.2l0 0c25.2 22.2 39.8 54.1 39.8 88.8c.1 35.3-16.6 66.3-42.4 87c-25.9 20.8-60.6 32.4-98.8 32.4c-43.5 0-83.8-16.1-83.8-16.1v51.8c7.4 2.2 19.7 7 11.9 14.8H104.8c-7.7-7.8 3.6-12.4 12.1-14.8V175.5C97.1 190.9 87 204.3 81.8 214.2c6 19.4-5.3 18.5-5.3 18.5L56 199.7s72.7-83.7 179.5-83.7zm-3.6 222.9c30 0 56-11.3 73.9-29.2c17.9-18.1 27.9-41.6 28-70.2c-.1-29.3-9.5-54.6-26.7-73.6c-17.2-18.9-42.7-31.3-75.2-31.4c-26.7-.1-59.8 9-80.2 23.7V323.1c18.6 9.3 46.8 15.9 80.2 15.8z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/zxzxovo'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                <form action="/page/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#配置git">配置Git</a></li>
+        <li><a href="#本地操作">本地操作</a></li>
+        <li><a href="#协作开发">协作开发</a></li>
+        <li><a href="#patch和submodule">Patch和Submodule</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/">
+                <img src="/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation_hu_195932ac6d1b3c30.png"
+                        srcset="/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation_hu_195932ac6d1b3c30.png 800w, /post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation_hu_97b162bd2ef64f2f.png 1600w"
+                        width="800" 
+                        height="516" 
+                        loading="lazy"
+                        alt="Featured image of post 再学一遍Git" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/code/" style="background-color: #1fa0ff; color: #fff;">
+                Code
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/">再学一遍Git</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Git命令快查册或备忘录或半个指南
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 08, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Git真的是非常重要了！！但我编码不多，用到Git的场景也很少，一段时间不用就会忘掉好多命令和用法QwQ。</p>
+<p>按照一般的工作流记录一遍使用Git的工作流（顺便水一篇blog），顺便当个备忘录或教程（？），不要再忘了！</p>
+<h2 id="配置git">配置Git
+</h2><hr>
+<p>安装Git后，首先需要设置是谁在这台设备上使用Git工作，给自己注册个身份证：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;Name&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;Email@email.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># --global 选项为用户级配置，在当前用户目录下(~)生成 .gitconfig</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># --system --local 分别为机器级配置和仓库级配置</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 分别生成在	githome 和 repo 下</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>为了方便使用Github或其他Git服务器，我们需要配置SSH。为防止冒名顶替可以配置GPG：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh-keygen -t ed25519 -C <span class="s2">&#34;your_email@example.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 若不支持 ed25519 则使用如下命令</span>
+</span></span><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;your_email@example.com&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">gpg --full-generate-key
+</span></span><span class="line"><span class="cl"><span class="c1"># 若版本过旧使用如下命令</span>
+</span></span><span class="line"><span class="cl">gpg --default-new-key-algo rsa4096 --gen-key
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看现有的GPG密钥</span>
+</span></span><span class="line"><span class="cl">gpg --list-secret-keys --keyid-format<span class="o">=</span>long
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在Git中设置自己的私钥ID</span>
+</span></span><span class="line"><span class="cl">git config --global user.signingkey SEC_key_id
+</span></span><span class="line"><span class="cl">git config --global commit.gpgsign <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 导出公钥</span>
+</span></span><span class="line"><span class="cl">gpg --armor --export SEC_key_id
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>一些方便的命令 ^w^ ：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 更改git打开的文本编辑器</span>
+</span></span><span class="line"><span class="cl">git config -- system core.editor vim
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 长命令简写</span>
+</span></span><span class="line"><span class="cl">git config -- global alias.diy_name_here command_here
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 一条输出好看commit log的简写命令</span>
+</span></span><span class="line"><span class="cl">git config -- global alias.loog log --color --graph --pretty<span class="o">=</span>format:<span class="s1">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 手动编辑config文件</span>
+</span></span><span class="line"><span class="cl">git config -- global --edit
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="本地操作">本地操作
+</h2><p>要管理我们的项目，首先得创建一个Git库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init my_proj
+</span></span><span class="line"><span class="cl"><span class="c1"># or</span>
+</span></span><span class="line"><span class="cl">mkdir my_proj
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> my_proj
+</span></span><span class="line"><span class="cl">git init
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>从头开始开发，先编写一些项目的配置文件，然后提交，作为最初的版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 添加所有文件到Stage</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将内容从Stage提交</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -m &#34;message&#34; 选项附带简短的提交消息</span>
+</span></span><span class="line"><span class="cl">git commit
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将当前Stage的内容合并到最近一次的提交，同时修改提交的message</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;message&#34;</span> --amend
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后可以新建一个分支，在该分支上继续开发任务：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看当前仓库分支</span>
+</span></span><span class="line"><span class="cl">git branch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 新建分支</span>
+</span></span><span class="line"><span class="cl">git branch dev
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换到新分支（两条效果相同）</span>
+</span></span><span class="line"><span class="cl">git switch dev
+</span></span><span class="line"><span class="cl">git checkout dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 可以用以下表示新建并切换到新分区</span>
+</span></span><span class="line"><span class="cl">git switch -c dev
+</span></span><span class="line"><span class="cl">git checkout -b dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改分支名</span>
+</span></span><span class="line"><span class="cl">git branch -M old_name new_name
+</span></span><span class="line"><span class="cl"><span class="c1"># 或修改当前分支</span>
+</span></span><span class="line"><span class="cl">git branch -M new_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>现在看看在开发时怎么进行版本管理（）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看commit记录</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># --pretty=oneline  选项简化输出每行显示一条commit</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># --oneline         选项简写commit id</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -- file_here      选项显该文件相关的commit</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># --graph           选项图形化显示分支信息</span>
+</span></span><span class="line"><span class="cl">git log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看当前仓库的状态</span>
+</span></span><span class="line"><span class="cl">git status
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有操作日志</span>
+</span></span><span class="line"><span class="cl">git reflog
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 若有文件被修改，查看工作区和Stage的差异</span>
+</span></span><span class="line"><span class="cl">git diff file_name_here
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看工作区或Stage与当前HEAD指向版本的差异</span>
+</span></span><span class="line"><span class="cl">git diff HEAD -- file
+</span></span><span class="line"><span class="cl">git diff HEAD --cached
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># revert 用于撤销指定commit的更改，并为此次撤销创建commit应用到当前分支</span>
+</span></span><span class="line"><span class="cl">git revert commit_id_here
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># reset 用于回退到之前的版本</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># HEAD^n  表示上n次提交</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># --hard 已提交状态（删除工作区修改）  --soft 未提交状态  --mixed 已添加未提交状态（）</span>
+</span></span><span class="line"><span class="cl">git reset --hard HEAD^
+</span></span><span class="line"><span class="cl">git reset --hard commit_id_here
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 撤销*Stage*中已add的文件，保留工作区中的修改（不改变工作区）</span>
+</span></span><span class="line"><span class="cl">git restore --staged file
+</span></span><span class="line"><span class="cl"><span class="c1"># 与上条效果相同</span>
+</span></span><span class="line"><span class="cl">git reset HEAD file
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 撤销*Stage*中已add的文件，并撤销工作区中的修改使其与HEAD（若Stage中存在，则是Stage）一致</span>
+</span></span><span class="line"><span class="cl">git restore file
+</span></span><span class="line"><span class="cl"><span class="c1"># 与上条命令效果相同</span>
+</span></span><span class="line"><span class="cl">git checkout -- file
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除文件</span>
+</span></span><span class="line"><span class="cl">rm file
+</span></span><span class="line"><span class="cl">git add.
+</span></span><span class="line"><span class="cl"><span class="c1"># 与上条效果相同</span>
+</span></span><span class="line"><span class="cl">git rm file
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 用于选取一次commit合并到当前分支</span>
+</span></span><span class="line"><span class="cl">git cherry-pick commit_id
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># tag 用于为特定commit添加标签，可用于发布版本</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 当前命令为HEAD指向的commit添加标签</span>
+</span></span><span class="line"><span class="cl">git tag tag_here
+</span></span><span class="line"><span class="cl"><span class="c1"># 为指定commit添加标签</span>
+</span></span><span class="line"><span class="cl">git tag tag_here commit_id_here
+</span></span><span class="line"><span class="cl"><span class="c1"># -a 指定标签名 -m 指定标签说明</span>
+</span></span><span class="line"><span class="cl">git tag -a tag_here -m <span class="s2">&#34;message&#34;</span> commit_id_here
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 撤销打上的标签</span>
+</span></span><span class="line"><span class="cl">git tag -d tag_here
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有标签</span>
+</span></span><span class="line"><span class="cl">git tag
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看特定标签信息</span>
+</span></span><span class="line"><span class="cl">git show tag_here
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在该分支上完成开发任务后，可以合并到master分支：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git switch master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 合并分支</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 默认 Fast-forward模式 合并</span>
+</span></span><span class="line"><span class="cl">git merge dev
+</span></span><span class="line"><span class="cl"><span class="c1"># 合并后可删除分支</span>
+</span></span><span class="line"><span class="cl">git branch -d dev
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果分支在合并时太乱，可以Rebase成一条线</span>
+</span></span><span class="line"><span class="cl">git rebase
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示图形化的分支信息</span>
+</span></span><span class="line"><span class="cl">git log --graph
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="协作开发">协作开发
+</h2><p>在本地使用Git进行版本管理进行得差不多了，现在看看如何使用Git借助远程仓库与别人协助工作。</p>
+<p>首先看看怎么进行远程仓库的一些相关操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看当前仓库的远程仓库信息</span>
+</span></span><span class="line"><span class="cl">git remote -v
+</span></span><span class="line"><span class="cl"><span class="c1"># 为本地仓库添加远程仓库</span>
+</span></span><span class="line"><span class="cl">git remote add remote_name remote_repo_uri
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送选定分支到远程仓库</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># --tags 选项推送本地所有tag</span>
+</span></span><span class="line"><span class="cl">git push remote_name branch_name
+</span></span><span class="line"><span class="cl"><span class="c1"># 将远程仓库作为选定本地分支的上游，简化push</span>
+</span></span><span class="line"><span class="cl">git push -u remote_name branch_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 从远程仓库拉取 会merge到工作区</span>
+</span></span><span class="line"><span class="cl">git pull remote_name
+</span></span><span class="line"><span class="cl"><span class="c1"># 从远程仓库拉取 只拉取仓库，不改变工作区，需要手动merge</span>
+</span></span><span class="line"><span class="cl">git ferch remote_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除当前仓库和远程仓库的绑定信息</span>
+</span></span><span class="line"><span class="cl">git remote rm remote_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 从已有的远程仓库开始开发</span>
+</span></span><span class="line"><span class="cl">git clone remote_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>多分支下与远程仓库的操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看远程仓库的分支</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -a 选项查看本地和远程的所有分支</span>
+</span></span><span class="line"><span class="cl">git branch -r
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建分支</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 将本地分支推送到远程。远程若没有则会创建</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -u 选项将绑定upstream，简化push</span>
+</span></span><span class="line"><span class="cl">git push remote_name branch_name
+</span></span><span class="line"><span class="cl"><span class="c1"># 一次推送本地所有分支</span>
+</span></span><span class="line"><span class="cl">git push --all remote_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在本地创建分支，并与已存在的远程仓库关联</span>
+</span></span><span class="line"><span class="cl">git checkout -b branch_name remote_name/remote_branch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除远程分支</span>
+</span></span><span class="line"><span class="cl">git push remote_name --delete branch_name
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除本地分支</span>
+</span></span><span class="line"><span class="cl">git branch -d branch_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="patch和submodule">Patch和Submodule
+</h2><p>Patch用于记录代码的更改及应用，可以使用它生成最近几次的commit记录的patch，也可以很方便地把patch的改动合并：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 生成patch</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 通过最近的n次commit生成n个patch</span>
+</span></span><span class="line"><span class="cl">git format-patch -n
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 应用patch，但不会生成新的commit</span>
+</span></span><span class="line"><span class="cl">git apply patch_name.patch
+</span></span><span class="line"><span class="cl"><span class="c1"># 应用patch，但会生成新的commit</span>
+</span></span><span class="line"><span class="cl">git am patch_name.patch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 可使用send-email发送patch</span>
+</span></span><span class="line"><span class="cl">git send-email --to<span class="o">=</span><span class="s2">&#34;email&#34;</span> patch_name.patch
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Submodule用于管理大型项目，尤其是一个项目是由多个子项目构成时。例如Rust开发中使用 workspace 与 submodule 配合进行项目管理：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 添加submodule</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加本地的git仓库</span>
+</span></span><span class="line"><span class="cl">git submodule add ./submodule_name
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加远程仓库</span>
+</span></span><span class="line"><span class="cl">git submodule add url submodule_path
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 克隆带有 submodule 的仓库</span>
+</span></span><span class="line"><span class="cl">git clone --recurse-submodules repo_url
+</span></span><span class="line"><span class="cl"><span class="c1"># 或克隆仓库后再获取submodule</span>
+</span></span><span class="line"><span class="cl">git submodule update --init --recursive
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 为子模块commit后，包含它作为submodule的仓库也需要提交commit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># submodule的远程仓库更新后，拉取最新代码</span>
+</span></span><span class="line"><span class="cl">git submodule update --remote
+</span></span><span class="line"><span class="cl"><span class="c1"># 若只需要更新某个子模块</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> module_name
+</span></span><span class="line"><span class="cl">git pull
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..
+</span></span><span class="line"><span class="cl">git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&#34;message&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除submodule</span>
+</span></span><span class="line"><span class="cl">git submodule deinit -f module_name
+</span></span><span class="line"><span class="cl">git rm -f module_name
+</span></span><span class="line"><span class="cl">rm -rf .git/modules/module_name
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;message&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/git/">Git</a>
+        
+            <a href="/tags/code/">Code</a>
+        
+            <a href="/tags/tools/">Tools</a>
+        
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">进制转换</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg" loading="lazy" data-key="Clap的一些用法" data-hash="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Clap的一些用法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/">
+        
+        
+            <div class="article-image">
+                <img src="/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.f33ea36ab65d6186be4d6f672205416e_hu_e26ddc2fdf8c1a4f.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Rust的函数式编程— 闭包"
+                        
+                        data-hash="md5-8z6jarZdYYa&#43;TW9nIgVBbg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust的函数式编程— 闭包</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="zxzxovo/zxzxovo.github.io"
+    data-repo-id=""
+    data-category="General"
+    data-category-id=""
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 zhixia
+    </section>
+    
+    <section class="powerby">
+        
+            "一天云破碎，两树玉扶疏" <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

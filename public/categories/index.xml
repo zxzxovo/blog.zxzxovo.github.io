@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on Zhixia&#39;s Blog</title>
+        <link>https://hizhixia.site/categories/</link>
+        <description>Recent content in Categories on Zhixia&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>zhixia</copyright>
+        <lastBuildDate>Tue, 01 Apr 2025 13:38:17 +0800</lastBuildDate><atom:link href="https://hizhixia.site/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Code</title>
+        <link>https://hizhixia.site/categories/code/</link>
+        <pubDate>Tue, 01 Apr 2025 13:38:17 +0800</pubDate>
+        
+        <guid>https://hizhixia.site/categories/code/</guid>
+        <description>&lt;img src="https://hizhixia.site/categories/code/nav.jpg" alt="Featured image of post Code" /&gt;</description>
+        </item>
+        <item>
+        <title>Daily</title>
+        <link>https://hizhixia.site/categories/daily/</link>
+        <pubDate>Tue, 01 Apr 2025 13:37:48 +0800</pubDate>
+        
+        <guid>https://hizhixia.site/categories/daily/</guid>
+        <description>&lt;img src="https://hizhixia.site/categories/daily/nav.jpg" alt="Featured image of post Daily" /&gt;</description>
+        </item>
+        <item>
+        <title>MY_ME</title>
+        <link>https://hizhixia.site/categories/my_me/</link>
+        <pubDate>Tue, 01 Apr 2025 13:06:18 +0800</pubDate>
+        
+        <guid>https://hizhixia.site/categories/my_me/</guid>
+        <description>&lt;img src="https://hizhixia.site/categories/my_me/nav.jpg" alt="Featured image of post MY_ME" /&gt;</description>
+        </item>
+        <item>
+        <title>Math</title>
+        <link>https://hizhixia.site/categories/math/</link>
+        <pubDate>Thu, 20 Feb 2025 00:40:47 +0800</pubDate>
+        
+        <guid>https://hizhixia.site/categories/math/</guid>
+        <description>&lt;img src="https://hizhixia.site/categories/math/nav.webp" alt="Featured image of post Math" /&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

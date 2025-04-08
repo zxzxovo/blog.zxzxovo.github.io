@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="用Clap快速编写命令行程序">
+<title>Clap的一些用法</title>
+
+<link rel='canonical' href='https://hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Clap的一些用法">
+<meta property='og:description' content="用Clap快速编写命令行程序">
+<meta property='og:url' content='https://hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/'>
+<meta property='og:site_name' content='Zhixia&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Clap' /><meta property='article:tag' content='Code' /><meta property='article:tag' content='Tools' /><meta property='article:tag' content='Rust' /><meta property='article:published_time' content='2025-02-12T20:40:22&#43;08:00'/><meta property='article:modified_time' content='2025-02-12T20:40:22&#43;08:00'/><meta property='og:image' content='https://hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg' />
+<meta name="twitter:site" content="@@zxzxovo">
+    <meta name="twitter:creator" content="@@zxzxovo"><meta name="twitter:title" content="Clap的一些用法">
+<meta name="twitter:description" content="用Clap快速编写命令行程序"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-470W7HLJ27"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-470W7HLJ27');
+        }
+      </script>
+
+ 
+<style type="text/css">
+    .menu-social svg, #main-menu-li-svg-map {
+        fill: currentColor;
+    }
+    html[data-scheme="dark"] .menu-social svg, #main-menu-li-svg-map {
+        fill: currentColor;
+    }
+
+
+    html[data-scheme="dark"] .menav-navp-card p {
+        color: #bbb;
+    }
+    .menav-navp-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    span.art-tags {
+        color: white;
+        background-color: #a64acf;
+        border: 4px solid #a64acf;
+        border-radius: 15px;
+        padding: 0% 2%;
+  }
+</style>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7819682643742139"
+     crossorigin="anonymous"></script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar3_hu_8f8c691b8d7aa7b7.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😌</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Zhixia&#39;s Blog</a></h1>
+            <h2 class="site-description">Hi! 这里是我的小空间，欢迎常来做客！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zxzxovo'
+                        target="_blank"
+                        title="Github"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" >
+<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+<path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:zhixiaovo@gmail.com'
+                        target="_blank"
+                        title="Gmail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.pixiv.net/users/114982899'
+                        target="_blank"
+                        title="Pixiv"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm171.5 84c41 0 76.3 12.9 101.4 35.2l0 0c25.2 22.2 39.8 54.1 39.8 88.8c.1 35.3-16.6 66.3-42.4 87c-25.9 20.8-60.6 32.4-98.8 32.4c-43.5 0-83.8-16.1-83.8-16.1v51.8c7.4 2.2 19.7 7 11.9 14.8H104.8c-7.7-7.8 3.6-12.4 12.1-14.8V175.5C97.1 190.9 87 204.3 81.8 214.2c6 19.4-5.3 18.5-5.3 18.5L56 199.7s72.7-83.7 179.5-83.7zm-3.6 222.9c30 0 56-11.3 73.9-29.2c17.9-18.1 27.9-41.6 28-70.2c-.1-29.3-9.5-54.6-26.7-73.6c-17.2-18.9-42.7-31.3-75.2-31.4c-26.7-.1-59.8 9-80.2 23.7V323.1c18.6 9.3 46.8 15.9 80.2 15.8z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/zxzxovo'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                <form action="/page/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#clap的两种api">Clap的两种API</a></li>
+    <li><a href="#使用方式">使用方式</a>
+      <ol>
+        <li><a href="#builder-api">Builder API</a></li>
+        <li><a href="#derive-api">Derive API</a></li>
+      </ol>
+    </li>
+    <li><a href="#常用配置">常用配置</a>
+      <ol>
+        <li><a href="#参数和子命令的一些设置">参数和子命令的一些设置</a></li>
+        <li><a href="#对command的配置">对Command的配置</a></li>
+        <li><a href="#对args的配置">对Args的配置</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/">
+                
+                    <img src="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg" loading="lazy" alt="Featured image of post Clap的一些用法" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/code/" style="background-color: #1fa0ff; color: #fff;">
+                Code
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/">Clap的一些用法</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            用Clap快速编写命令行程序
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 12, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Rust的 <a class="link" href="https://crates.io/crates/clap"  target="_blank" rel="noopener"
+    >Clap Crate</a> 非常适用于开发命令行程序，它是一个“简单易用、高效且功能齐全的命令行参数解析器”。</p>
+<p>Clap的作用在于帮助我们定义命令行工具的各种指令和用法，并解析用户使用的什么指令。之后我们只需要编写对应指令的功能代码即可。</p>
+<p>在这里简单记录一下它的一些用法。</p>
+<ul>
+<li>crates.io: <a class="link" href="https://crates.io/crates/clap"  target="_blank" rel="noopener"
+    >link</a></li>
+<li>docs.rs: <a class="link" href="https://docs.rs/clap/4.5.29/clap/"  target="_blank" rel="noopener"
+    >link</a></li>
+<li>repo: <a class="link" href="https://github.com/clap-rs/clap"  target="_blank" rel="noopener"
+    >link</a></li>
+<li>Exapmles: <a class="link" href="https://github.com/clap-rs/clap/tree/master/examples"  target="_blank" rel="noopener"
+    >link</a></li>
+</ul>
+<p>本文编写时：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">clap</span> <span class="p">=</span> <span class="s2">&#34;4.5.29&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="clap的两种api">Clap的两种API
+</h1><p>Clap目前可以使用这两种方式构建命令行程序：</p>
+<ul>
+<li>Builder API</li>
+<li>Derive API
+官方的example多数都提供了两种方式的示例。</li>
+</ul>
+<p>若要使用Derive API，记得要添加feature：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">clap</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;4.5.28&#34;</span><span class="p">,</span> <span class="nx">features</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;derive&#34;</span><span class="p">]</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>两种构建方式的区别主要是：</p>
+<blockquote>
+<p>Builder API</p>
+</blockquote>
+<ul>
+<li><strong>链式调用</strong>的方式构建程序。</li>
+<li>由于是 <strong>链式调用</strong>，代码 <strong>很长很复杂</strong>，可复用度较低。但在命令行参数需要经常变动调整时比较方便，加减几个函数调用就行。</li>
+</ul>
+<blockquote>
+<p>Derive API</p>
+</blockquote>
+<ul>
+<li><strong>声明式</strong>，通过定义命令和参数对应的 <code>Strut</code> 和 <code>Enum</code> 并在上面使用 <strong>属性宏</strong> 构建程序。</li>
+<li>使用 <strong>声明式</strong> 构建，代码 <strong>直观简洁</strong>，方便理解和维护。适合参数和命令比较稳定的命令行程序。</li>
+</ul>
+<p>使用 <strong>Derive API</strong> 可以兼顾开发效率和可维护性，同时上手方便。如果有复杂定制或控制更多细节的需求，再使用Builder API。
+在特定情况下，Derive 和 Builder API 可以混合使用： <a class="link" href="https://docs.rs/clap/4.5.29/clap/_derive/index.html#mixing-builder-and-derive-apis"  target="_blank" rel="noopener"
+    >Mixing Builder and Derive APIs</a></p>
+<h1 id="使用方式">使用方式
+</h1><blockquote>
+<p>官方给的Git示例比较好，推荐查看：</p>
+</blockquote>
+<ul>
+<li><a class="link" href="https://github.com/clap-rs/clap/blob/master/examples/git.rs"  target="_blank" rel="noopener"
+    >git-Builder API</a></li>
+<li><a class="link" href="https://github.com/clap-rs/clap/blob/master/examples/git-derive.rs"  target="_blank" rel="noopener"
+    >git-Derive API</a></li>
+</ul>
+<h2 id="builder-api">Builder API
+</h2><p>Builder API 下，我们需要创建一个Command，通过调用 <code>get_matches()</code>函数来解析参数并获得 <code>ArgMathces</code>，然后对它进行模式匹配解析出相应指令，最后编写其对应的功能代码完成程序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">clap</span>::<span class="p">{</span><span class="n">Command</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="n">Arg</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Command</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;CLI Name&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">version</span><span class="p">(</span><span class="s">&#34;1.0&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">author</span><span class="p">(</span><span class="s">&#34;Name &lt;email@email.com&gt;&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">about</span><span class="p">(</span><span class="s">&#34;Introduction&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">subcommand_required</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 位置参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="p">.</span><span class="n">arg</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Arg</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;input&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">help</span><span class="p">(</span><span class="s">&#34;文件路径&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">required</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 选项参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="p">.</span><span class="n">arg</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Arg</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">short</span><span class="p">(</span><span class="sc">&#39;n&#39;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">long</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">help</span><span class="p">(</span><span class="s">&#34;指定用户名&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">arg_required_else_help</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 定义子命令
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="p">.</span><span class="n">subcommand</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	        </span><span class="n">Command</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;diff&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">about</span><span class="p">(</span><span class="s">&#34;比较两个文件&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">arg</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	                </span><span class="n">Arg</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;full&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		                </span><span class="p">.</span><span class="n">help</span><span class="p">(</span><span class="s">&#34;全文比较&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		                </span><span class="p">.</span><span class="n">long</span><span class="p">(</span><span class="s">&#34;full&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		        </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		        </span><span class="p">.</span><span class="n">arg</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	                </span><span class="n">Arg</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;info&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		                </span><span class="p">.</span><span class="n">help</span><span class="p">(</span><span class="s">&#34;比较文件信息&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		                </span><span class="p">.</span><span class="n">long</span><span class="p">(</span><span class="s">&#34;info&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		        </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmd</span><span class="p">.</span><span class="n">get_matches</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 匹配参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matches</span><span class="p">.</span><span class="n">value_of</span><span class="p">(</span><span class="s">&#34;input&#34;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;输入文件: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matches</span><span class="p">.</span><span class="n">value_of</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;用户名: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;未指定用户名&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 匹配子命令
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="k">match</span><span class="w"> </span><span class="n">matches</span><span class="p">.</span><span class="n">subcommand</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nb">Some</span><span class="p">((</span><span class="s">&#34;diff&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">diff_matches</span><span class="p">))</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kd">let</span><span class="w"> </span><span class="n">full</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diff_matches</span><span class="p">.</span><span class="n">get_one</span>::<span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&#34;full&#34;</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">as_str</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="no">TODO</span><span class="p">(</span><span class="s">&#34;还是看官方Example好一些&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="derive-api">Derive API
+</h2><p>Derive API 下，我们需要创建一个结构体表示命令行程序，随后可以向其中嵌套添加结构体或枚举表示子命令、参数等：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">clap</span>::<span class="n">Parser</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[derive(Parser)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[command(next_line_help = true)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[command(name = </span><span class="s">&#34;hello&#34;</span><span class="cp">, version = </span><span class="s">&#34;1.0&#34;</span><span class="cp">, about = </span><span class="s">&#34;一个简单的示例程序&#34;</span><span class="cp">)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Cli</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// Option&lt;T&gt; 表示可选参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">name</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 表示包含子命令。子命令定义在Commands枚举中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="cp">#[command(subcommand)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">command</span>: <span class="nc">Commands</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[derive(Subcommand)]</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">enum</span> <span class="nc">Commands</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="cp">#[command(about = </span><span class="s">&#34;A subcommand&#34;</span><span class="cp">)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">A</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="cp">#[command(about = </span><span class="s">&#34;B subcommand with args&#34;</span><span class="cp">)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">B</span><span class="p">(</span><span class="n">BArgs</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[derive(Args)]</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">BArgs</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 定义参数，value_enum 表示该参数的值是可选的几个给定值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="cp">#[arg(short, long, required = true, value_enum)]</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="cp">#[arg(help = </span><span class="s">&#34;Info mode&#34;</span><span class="cp">)]</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">mode</span>: <span class="nc">BArgsMode</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[derive(Copy, Clone, ValueEnum)]</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">enum</span> <span class="nc">InfoFaArgsMode</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="cp">#[value(help = </span><span class="s">&#34;aa&#34;</span><span class="cp">)]</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="no">AA</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="cp">#[value(help = </span><span class="s">&#34;aa&#34;</span><span class="cp">)]</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="no">BB</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cli</span>::<span class="n">parse</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 匹配可选参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">//匹配定义的command 子命令
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="k">match</span><span class="w"> </span><span class="n">args</span><span class="p">.</span><span class="n">command</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">Commands</span>::<span class="n">A</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="no">TODO</span><span class="p">()</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">Commands</span>::<span class="n">B</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="no">TODO</span><span class="p">()</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="常用配置">常用配置
+</h1><h2 id="参数和子命令的一些设置">参数和子命令的一些设置
+</h2><ul>
+<li>位置参数
+结构体中不加 <code>#[arg(short, long)]</code> 时默认作为位置参数。位置参数可以直接使用：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">my-app my_arg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>选项参数
+使用 <code>#[arg(short, long)]</code> 时作为选项参数，用户可以通过短选项（如 <code>-n</code>）或长选项（如 <code>--name</code>）传递参数：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">my-app -a arg --barg arg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>标志参数
+当值的类型为布尔值时如 <code>debug: bool</code> 为标志参数，出现即为true,未出现为false。一般出现时与<code>action</code>联用（<code> #[arg(short, long, action = clap::ArgAction::Count)]</code>）：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">my-app --debug
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="对command的配置">对Command的配置
+</h2><ul>
+<li><strong>name</strong></li>
+<li><strong>version</strong></li>
+<li><strong>author</strong></li>
+<li><strong>about / long_about</strong></li>
+<li><strong>propagate_version</strong>
+<ul>
+<li>如果设置为 true，子命令也会显示顶级命令的版本信息。</li>
+<li><code>#[command(propagate_version = true)]</code></li>
+</ul>
+</li>
+<li><strong>disable_help_flag / disable_version_flag</strong>
+<ul>
+<li>禁用时不会自动生成 <code>--help</code> 和 <code>--version</code>。</li>
+</ul>
+</li>
+<li><strong>next_line_help</strong>
+<ul>
+<li>设为true时，帮助信息将会显示在命令名称的下一行。</li>
+</ul>
+</li>
+<li><strong>term_width</strong>
+<ul>
+<li>指定帮助信息的输出宽度，便于美化输出。</li>
+<li><code>#[command(term_width = 80)]</code></li>
+</ul>
+</li>
+<li>allow_external_subcommands</li>
+<li><strong>help_template</strong>
+<ul>
+<li>自定义帮助信息模板，如下所示：</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="cp">#[derive(Parser)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[command(
+</span></span></span><span class="line"><span class="cl"><span class="cp">    about = </span><span class="s">&#34;帮助信息定制示例&#34;</span><span class="cp">,
+</span></span></span><span class="line"><span class="cl"><span class="cp">    help_template = </span><span class="s">&#34;</span><span class="se">\</span><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">{name} {version}
+</span></span></span><span class="line"><span class="cl"><span class="s">{about}
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">USAGE:
+</span></span></span><span class="line"><span class="cl"><span class="s">    {usage}
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">{all-args}
+</span></span></span><span class="line"><span class="cl"><span class="s">&#34;</span><span class="cp">,
+</span></span></span><span class="line"><span class="cl"><span class="cp">    term_width = 80
+</span></span></span><span class="line"><span class="cl"><span class="cp">)]</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>对subcommand的配置与此类似。</p>
+<h2 id="对args的配置">对Args的配置
+</h2><ul>
+<li><strong>short 和 long</strong>
+<ul>
+<li>设置参数的短选项和长选项。</li>
+<li>示例：<code>#[arg(short, long)]</code>（自动推导名称），也可以显式设置：<code>#[arg(short = 'n', long = &quot;name&quot;)]</code></li>
+</ul>
+</li>
+<li><strong>help</strong></li>
+<li><strong>value_name</strong>
+<ul>
+<li>指定参数在帮助信息中显示的值名。</li>
+<li>示例：<code>#[arg(value_name = &quot;FILE&quot;)]</code></li>
+</ul>
+</li>
+<li><strong>default_value / default_value_t</strong>
+<ul>
+<li>设置默认值，可以是字符串或类型 T 的默认值。</li>
+<li>示例：<code>#[arg(default_value = &quot;8080&quot;)]</code> 或 <code>#[arg(default_value_t = 8080)]</code></li>
+</ul>
+</li>
+<li><strong>required / required_if / required_if_eq</strong>
+<ul>
+<li>控制参数是否必填，或在某些条件下必填。</li>
+<li>示例：<code>#[arg(required = true)]</code> 或 <code>#[arg(required_if_eq(&quot;mode&quot;, &quot;a&quot;))]</code></li>
+</ul>
+</li>
+<li><strong>env</strong>
+<ul>
+<li>没有输入参数时将从设定的环境变量中读取值作为该参数。</li>
+<li><code>#[arg(env = &quot;MYAPP_CONFIG&quot;)]</code></li>
+</ul>
+</li>
+<li><strong>value_parser</strong>
+<ul>
+<li>设置参数的解析器，可以指定类型转换、范围限制或自定义验证函数。</li>
+<li>示例：<code>#[arg(value_parser = clap::value_parser!(u16).range(1..=65535))]</code></li>
+</ul>
+</li>
+<li><strong>action</strong>
+<ul>
+<li>针对布尔值或计数参数，可以指定行为，例如 Count（出现一次该参数则值增长1）或 SetTrue（只要参数出现出现就设为 true）。</li>
+<li><code>#[arg(short, long, action = clap::ArgAction::Count)]</code></li>
+</ul>
+</li>
+<li><strong>conflicts_with / requires</strong>
+<ul>
+<li>用于定义参数之间的互斥或依赖关系。</li>
+<li>示例：<code>#[arg(conflicts_with = &quot;other_arg&quot;)]</code> 或 <code>#[arg(requires = &quot;config&quot;)]</code></li>
+</ul>
+</li>
+<li><strong>group</strong>
+<ul>
+<li>为参数设置组，同一个组的参数有一个被输入即可。</li>
+<li><code>#[arg(group = &quot;input&quot;)]</code></li>
+</ul>
+</li>
+<li><strong>alias / short_alias / long_alias</strong></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/clap/">Clap</a>
+        
+            <a href="/tags/code/">Code</a>
+        
+            <a href="/tags/tools/">Tools</a>
+        
+            <a href="/tags/rust/">Rust</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/">
+        
+        
+            <div class="article-image">
+                <img src="/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.f33ea36ab65d6186be4d6f672205416e_hu_e26ddc2fdf8c1a4f.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Rust的函数式编程— 闭包"
+                        
+                        data-hash="md5-8z6jarZdYYa&#43;TW9nIgVBbg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust的函数式编程— 闭包</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/">
+        
+        
+            <div class="article-image">
+                <img src="/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation.34917b969193928c586023f0b971ae38_hu_5d038c56175afbe2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 再学一遍Git"
+                        data-key="再学一遍Git" 
+                        data-hash="md5-NJF7lpGTkoxYYCPwuXGuOA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">再学一遍Git</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">进制转换</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="zxzxovo/zxzxovo.github.io"
+    data-repo-id=""
+    data-category="General"
+    data-category-id=""
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 zhixia
+    </section>
+    
+    <section class="powerby">
+        
+            "一天云破碎，两树玉扶疏" <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

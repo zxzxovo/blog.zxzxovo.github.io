@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on Zhixia&#39;s Blog</title>
+        <link>https://hizhixia.site/page/</link>
+        <description>Recent content in Pages on Zhixia&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>zhixia</copyright>
+        <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://hizhixia.site/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://hizhixia.site/page/about/</link>
+        <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://hizhixia.site/page/about/</guid>
+        <description>&lt;img src="https://hizhixia.site/page/about/about.jpg" alt="Featured image of post About" /&gt;&lt;p&gt;
+点击这里访问： 
+&lt;a href=&#34;https://keyserver.ubuntu.com/pks/lookup?search=zhixiaovo%40gmail.com&amp;fingerprint=on&amp;op=index&#34; style=&#34;color: DodgerBlue;&#34;&#34;&gt; 我的GPG公钥 &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;hi&#34;&gt;Hi
+&lt;/h2&gt;&lt;p&gt;这里是 &lt;strong&gt;芷夏&lt;/strong&gt; 的赛博小站！&lt;/p&gt;
+&lt;p&gt;我要用这个 &lt;em&gt;blog&lt;/em&gt; ：学习记录，乱七八糟的文章，技术交流 ^w^ 。&lt;/p&gt;
+&lt;p&gt;管它的，好玩就行了，✌！&lt;/p&gt;
+&lt;h2 id=&#34;关于我&#34;&gt;关于我
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;MBTI: INFP 小蝴蝶&lt;/li&gt;
+&lt;li&gt;出生在： 2003年1月10日&lt;/li&gt;
+&lt;li&gt;兴趣爱好： 音乐、电子游戏、羽毛球、足球、骑行（&lt;strong&gt;还有好多想到再写&lt;/strong&gt;）&lt;/li&gt;
+&lt;li&gt;专业技能： 自学编程ing，计算机408(bushi&lt;/li&gt;
+&lt;li&gt;编程语言： 初步习得（&lt;em&gt;C,&lt;/em&gt;） ，正在学习（&lt;em&gt;Rust, Python, JS, Java, Kotlin&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;联系方式&#34;&gt;联系方式
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;email: &lt;a class=&#34;link&#34; href=&#34;mailto:zhixiaovo@gmail.com&#34; &gt;zhixiaovo@gmail.com&lt;/a&gt;   or    &lt;a class=&#34;link&#34; href=&#34;mailto:zx@hizhixia.site&#34; &gt;zx@hizhixia.site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;QQ: 2244697793&lt;/li&gt;
+&lt;li&gt;X: &lt;a class=&#34;link&#34; href=&#34;https://x.com/zxzxovo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@zxzxovo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Github: &lt;a class=&#34;link&#34; href=&#34;https://github.com/zxzxovo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@zxzxovo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://hizhixia.site/page/archives/</link>
+        <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://hizhixia.site/page/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Links</title>
+        <link>https://hizhixia.site/page/links/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://hizhixia.site/page/links/</guid>
+        <description>&lt;h2 id=&#34;links-here&#34;&gt;Links Here!
+&lt;/h2&gt;&lt;p&gt;欢迎联系我添加 &lt;em&gt;友链&lt;/em&gt; 喵 OvO ！&lt;/p&gt;
+&lt;p&gt;或者直接 &lt;em&gt;Pull Request&lt;/em&gt; 或 &lt;em&gt;Issue&lt;/em&gt; ！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://hizhixia.site/page/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://hizhixia.site/page/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
