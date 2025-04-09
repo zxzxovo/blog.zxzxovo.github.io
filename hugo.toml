@@ -100,10 +100,10 @@ enabled = true
 provider = "giscus"
 
 [params.comments.giscus]
-repo = "zxzxovo/zxzxovo.github.io"
-repo-id = "R_kgDONxTewg"
-category = "General"
-category-id = "DIC_kwDONxTews4CmeWY"
+repo = "zxzxovo/blog.zxzxovo.github.io"
+repo-id = "R_kgDOOWB7gg"
+category = "Announcements"
+category-id = "DIC_kwDOOWB7gs4Co68i"
 mapping = "pathname"
 light-theme = true
 dark-theme = true
