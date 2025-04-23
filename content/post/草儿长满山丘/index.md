@@ -4,7 +4,7 @@ draft = false
 title = '草儿长满山丘'
 image = "navigation.jpg"
 description = "情绪激荡时由感觉出发得到的小诗。"
-categories = ["Daily"]
+categories = ["Daily", "Texts"]
 tags = ["Daily", "呓语", "散文诗类似体", "小诗"]
 +++
 

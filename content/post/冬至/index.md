@@ -4,7 +4,7 @@ draft = false
 title = '冬至'
 image = "navigation.jpg"
 description = "某段时期浑浑噩噩中写的文字"
-categories = ["Daily"]
+categories = ["Daily", "Texts"]
 tags = ["Daily", "呓语", "小说类似体"]
 +++
 
