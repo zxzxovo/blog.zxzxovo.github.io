@@ -114,7 +114,7 @@ fn main() {
 	match matches.subcommand {
 		Some(("diff", diff_matches)) => {
 			let full = diff_matches.get_one::<String>("full").map(|s| s.as_str());
-			TODO("还是看官方Example好一些");
+			TODO("这里还是看官方Example好一些");
 		}
 	}
 	
@@ -166,7 +166,7 @@ enum InfoFaArgsMode {
 
 fn main() {
 	let args = Cli::parse();
-	// 匹配可选参数
+	// 匹配可选参数name
 	let name = args.name.unwrap();
 	//匹配定义的command 子命令
 	match args.command {

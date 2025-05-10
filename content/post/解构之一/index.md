@@ -5,7 +5,7 @@ title = '解构之一'
 image = "navigation.jpg"
 description = "关于我对自己的认识和现状的一些描述。"
 categories = ["Daily", "MY_ME"]
-tags = ["Daily", "呓语", "散文诗类似体", "解构", "无所事事"]
+tags = ["Daily", "呓语", "解构", "无所事事"]
 +++
 
 > 3月的最后一天凌晨，在压抑的情绪中所写的推文。

@@ -5,7 +5,7 @@ title = '解构之二'
 image = "navigation.jpg"
 description = "不定期搬运别的地方写的某些东西。"
 categories = ["Daily", "MY_ME"]
-tags = ["Daily", "呓语", "散文诗类似体", "解构", "无所事事"]
+tags = ["Daily", "呓语", "解构", "无所事事"]
 +++
 
 ### 2025年4月7日
