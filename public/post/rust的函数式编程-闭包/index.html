@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="关于Rust中的闭包">
 <title>Rust的函数式编程— 闭包</title>
 
-<link rel='canonical' href='https://blog.hizhixia.site/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/'>
+<link rel='canonical' href='http://localhost:1313/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Rust的函数式编程— 闭包">
 <meta property='og:description' content="关于Rust中的闭包">
-<meta property='og:url' content='https://blog.hizhixia.site/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/'>
+<meta property='og:url' content='http://localhost:1313/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/'>
 <meta property='og:site_name' content='Zhixia&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Rust' /><meta property='article:tag' content='Code' /><meta property='article:tag' content='闭包' /><meta property='article:tag' content='函数式编程' /><meta property='article:published_time' content='2025-04-01T13:38:17&#43;08:00'/><meta property='article:modified_time' content='2025-04-01T13:38:17&#43;08:00'/><meta property='og:image' content='https://blog.hizhixia.site/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Rust' /><meta property='article:tag' content='Code' /><meta property='article:tag' content='闭包' /><meta property='article:tag' content='函数式编程' /><meta property='article:published_time' content='2025-04-01T13:38:17&#43;08:00'/><meta property='article:modified_time' content='2025-04-01T13:38:17&#43;08:00'/><meta property='og:image' content='http://localhost:1313/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.jpg' />
 <meta name="twitter:site" content="@@zxzxovo">
     <meta name="twitter:creator" content="@@zxzxovo"><meta name="twitter:title" content="Rust的函数式编程— 闭包">
 <meta name="twitter:description" content="关于Rust中的闭包"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://blog.hizhixia.site/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.jpg' />
+    <meta name="twitter:image" content='http://localhost:1313/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.jpg' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-470W7HLJ27"></script>
@@ -574,7 +574,7 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="闭包捕获环境的方式">闭包捕获环境的方式
-</h2><p>闭包捕获环境的方式有这几种（注意还存在不捕获环境的闭包哦）：</p>
+</h2><p>闭包如果需要捕获环境的话，方式有这几种（对应于函数参数定义的三种方式）：</p>
 <ul>
 <li>不可变引用 <code>&amp;T</code></li>
 <li>可变引用 <code>&amp;mut T</code></li>
@@ -622,15 +622,15 @@
 <p>这时，闭包便使用被称作<strong>唯一不可变引用</strong>的特殊方式来捕获变量，即它会对 <code>b</code> 进行不可变引用，同时由编译器确保对 <code>b</code> 的引用只有一个。</p>
 <h2 id="3种闭包trait">3种闭包Trait
 </h2><p>这里需要做一区别，闭包<strong>如何捕获环境</strong>，和闭包<strong>如何使用捕获到的值</strong>，两者是不同的。</p>
-<p>Rust编译器会根据闭包 <strong>如何使用</strong> 捕获到的值，来决定为闭包实现哪些<strong>闭包Trait</strong>。
+<p>Rust编译器会根据闭包 <strong>如何使用</strong> 捕获到的值（将值返回，或不返回但修改，或不返回且不修改），来决定为闭包实现哪些<strong>闭包Trait</strong>。
 或者说，编译器通过这3种Trait来描述和分类不同的闭包：</p>
 <ul>
-<li><code>FnOnce</code> ：闭包可能会消耗掉捕获值的所有权。（若消耗掉所有权则只能使用以此，若不消耗则能使用n次，因此FnOnce表示所有闭包都至少能使用一次的特点，故而所有的闭包均实现了该Trait。）</li>
-<li><code>FnMut</code> ：闭包不会消耗掉捕获值的所有权，同时会对捕获值进行修改。</li>
-<li><code>Fn</code> ：闭包不会消耗掉捕获值的所有权，同时不会对捕获值进行修改。
-所有闭包都 <strong>至少</strong> 实现了 <code>FnOnce</code>。</li>
+<li><code>FnOnce</code> ：闭包可能会消耗掉捕获值的所有权，只能调用一次。（若消耗掉所有权则只能使用一次，故而所有的闭包均实现了该Trait。）</li>
+<li><code>FnMut</code> ：闭包不会消耗掉捕获值的所有权，会对捕获值进行修改。</li>
+<li><code>Fn</code> ：闭包不会消耗掉捕获值的所有权，不会对捕获值进行修改。</li>
 </ul>
-<p>所有类型的闭包中，有些闭包可能会消耗掉捕获值的所有权，这种闭包在调用一次后无法再次调用（要处理的值已经不见了），因此对于所有的闭包来说，闭包最少是可以使用一次的，使用 <code>FnOnce</code> 描述。
+<p>所有闭包都 <strong>至少</strong> 实现了 <code>FnOnce</code>。Rust会渐进地为闭包实现一个，两个或全部的 <code>trait</code>。</p>
+<p>所有类型的闭包中，有些闭包可能会消耗掉捕获值的所有权，这种闭包在调用一次后无法再次调用（要处理的值已经不见了），因此对于所有的闭包来说，闭包最少是可以使用一次的。
 如果闭包并不消耗掉捕获值的所有权，便可以多次被调用，它对捕获值的操作，只可能是修改或者不修改，前者使用 <code>FnMut</code> 描述，后者使用 <code>Fn</code> 描述。</p>
 <p>因此可以说，3种闭包Trait，是在 <strong>闭包如何使用捕获值的角度上，对闭包的分类。</strong></p>
 <p>现在观察这3种Trait的定义签名（简化）：</p>
@@ -664,9 +664,9 @@
 <ol>
 <li>只实现了 <code>FnOnce</code></li>
 <li>实现了 <code>FnOnce</code> 和 <code>FnMut</code></li>
-<li>实现了 <code>FnOnce</code> ，<code>FnMut</code> 和 <code>Fn</code>
-分别对应上述三种Trait的情况。</li>
+<li>实现了 <code>FnOnce</code> ，<code>FnMut</code> 和 <code>Fn</code></li>
 </ol>
+<p>分别对应上述三种 <code>trait</code> 。</p>
 <h2 id="函数式编程作为参数和返回值">函数式编程：作为参数和返回值
 </h2><p>由于Rust中的闭包实现了上文介绍的几种闭包特征，因此可以使用特征约束的方法让闭包作为函数参数或返回值来使用，例如：</p>
 <div class="highlight"><div class="chroma">
@@ -800,7 +800,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="nb">FnOnce</span><span class="p">()</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">ClosureSome</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="nb">FnOnce</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">ClosureSome</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">type</span> <span class="nc">Output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">call_once</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">a</span><span class="w">
@@ -1129,7 +1129,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.7c6f1146010f0b4e21cdf86d834ed893a5411bf4e43f79cb9861973e1b2817b3.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

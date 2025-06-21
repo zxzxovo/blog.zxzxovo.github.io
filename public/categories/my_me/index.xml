@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>MY_ME on Zhixia&#39;s Blog</title>
-        <link>https://blog.hizhixia.site/categories/my_me/</link>
+        <link>http://localhost:1313/categories/my_me/</link>
         <description>Recent content in MY_ME on Zhixia&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zhixia</copyright>
-        <lastBuildDate>Sun, 20 Apr 2025 11:15:21 +0800</lastBuildDate><atom:link href="https://blog.hizhixia.site/categories/my_me/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Apr 2025 11:15:21 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/my_me/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>解构之二</title>
-        <link>https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/</link>
+        <link>http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/</link>
         <pubDate>Sun, 20 Apr 2025 11:15:21 +0800</pubDate>
         
-        <guid>https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/</guid>
-        <description>&lt;img src="https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/navigation.jpg" alt="Featured image of post 解构之二" /&gt;&lt;h3 id=&#34;2025年4月7日&#34;&gt;2025年4月7日
+        <guid>http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/</guid>
+        <description>&lt;img src="http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/navigation.jpg" alt="Featured image of post 解构之二" /&gt;&lt;h3 id=&#34;2025年4月7日&#34;&gt;2025年4月7日
 &lt;/h3&gt;&lt;p&gt;我写过很多总结性的文字，多数都以“一路走到现在”之类的句子开头或结尾。而我熟知的人在生活中不断遇到新问题时，我面临的是没有改变过的问题。我与某人路上交谈甚久，他越走越远，我却停在原地。&lt;/p&gt;
 &lt;p&gt;我因何原因会是现在这种状况？
 因为我出身低微吗，因为我见识短浅吗，因为别人干扰吗？那我要怪罪于家庭学校政府社会乃至整个世界？
@@ -33,11 +33,11 @@
         </item>
         <item>
         <title>解构之一</title>
-        <link>https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/</link>
+        <link>http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/</link>
         <pubDate>Tue, 01 Apr 2025 13:06:18 +0800</pubDate>
         
-        <guid>https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/</guid>
-        <description>&lt;img src="https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/navigation.jpg" alt="Featured image of post 解构之一" /&gt;&lt;blockquote&gt;
+        <guid>http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/</guid>
+        <description>&lt;img src="http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/navigation.jpg" alt="Featured image of post 解构之一" /&gt;&lt;blockquote&gt;
 &lt;p&gt;3月的最后一天凌晨，在压抑的情绪中所写的推文。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;最近几年我对事物的态度变了很多，最初是热情激进，之后是麻木冷淡，再到现在乱七八糟的各种情绪杂糅在一起，复杂且混乱。
