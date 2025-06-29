@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Kotlin on Zhixia&#39;s Blog</title>
-        <link>http://localhost:1313/tags/kotlin/</link>
+        <link>https://blog.hizhixia.site/tags/kotlin/</link>
         <description>Recent content in Kotlin on Zhixia&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zhixia</copyright>
-        <lastBuildDate>Sat, 21 Jun 2025 14:54:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/kotlin/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Jun 2025 14:54:32 +0800</lastBuildDate><atom:link href="https://blog.hizhixia.site/tags/kotlin/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Android四大组件基础</title>
-        <link>http://localhost:1313/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/</link>
+        <link>https://blog.hizhixia.site/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Sat, 21 Jun 2025 14:54:32 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;h1 id=&#34;android应用开发四大组件详解&#34;&gt;Android应用开发四大组件详解
+        <guid>https://blog.hizhixia.site/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/nav.svg" alt="Featured image of post Android四大组件基础" /&gt;&lt;h1 id=&#34;android应用开发四大组件详解&#34;&gt;Android应用开发四大组件详解
 &lt;/h1&gt;&lt;p&gt;Android应用开发中常使用系统提供的 &lt;strong&gt;四大组件&lt;/strong&gt; ： &lt;em&gt;Activity, Service, Broadcast Receiver, Content Provider&lt;/em&gt;。&lt;/p&gt;
 &lt;p&gt;近期学习 《Android 第一行代码》，在这里总结一下四大组件的基础用法，用以巩固。&lt;/p&gt;
 &lt;blockquote&gt;

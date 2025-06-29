@@ -2,50 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Zhixia&#39;s Blog</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://blog.hizhixia.site/categories/</link>
         <description>Recent content in Categories on Zhixia&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zhixia</copyright>
-        <lastBuildDate>Sat, 10 May 2025 08:32:42 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 29 Jun 2025 10:53:46 +0800</lastBuildDate><atom:link href="https://blog.hizhixia.site/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Daily</title>
-        <link>http://localhost:1313/categories/daily/</link>
-        <pubDate>Sat, 10 May 2025 08:32:42 +0800</pubDate>
+        <link>https://blog.hizhixia.site/categories/daily/</link>
+        <pubDate>Sun, 29 Jun 2025 10:53:46 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/daily/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/daily/nav.jpg" alt="Featured image of post Daily" /&gt;</description>
+        <guid>https://blog.hizhixia.site/categories/daily/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/categories/daily/nav.jpg" alt="Featured image of post Daily" /&gt;</description>
         </item>
         <item>
         <title>Texts</title>
-        <link>http://localhost:1313/categories/texts/</link>
-        <pubDate>Sat, 10 May 2025 08:32:42 +0800</pubDate>
+        <link>https://blog.hizhixia.site/categories/texts/</link>
+        <pubDate>Sun, 29 Jun 2025 10:53:46 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/texts/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/texts/nav.jpg" alt="Featured image of post Texts" /&gt;</description>
+        <guid>https://blog.hizhixia.site/categories/texts/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/categories/texts/nav.jpg" alt="Featured image of post Texts" /&gt;</description>
         </item>
         <item>
-        <title>MY_ME</title>
-        <link>http://localhost:1313/categories/my_me/</link>
-        <pubDate>Sun, 20 Apr 2025 11:15:21 +0800</pubDate>
+        <title>Android</title>
+        <link>https://blog.hizhixia.site/categories/android/</link>
+        <pubDate>Sat, 21 Jun 2025 14:54:32 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/my_me/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/my_me/nav.jpg" alt="Featured image of post MY_ME" /&gt;</description>
+        <guid>https://blog.hizhixia.site/categories/android/</guid>
+        <description></description>
         </item>
         <item>
         <title>Code</title>
-        <link>http://localhost:1313/categories/code/</link>
-        <pubDate>Tue, 01 Apr 2025 13:38:17 +0800</pubDate>
+        <link>https://blog.hizhixia.site/categories/code/</link>
+        <pubDate>Sat, 21 Jun 2025 14:54:32 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/code/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/code/nav.jpg" alt="Featured image of post Code" /&gt;</description>
+        <guid>https://blog.hizhixia.site/categories/code/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/categories/code/nav.jpg" alt="Featured image of post Code" /&gt;</description>
+        </item>
+        <item>
+        <title>MY_ME</title>
+        <link>https://blog.hizhixia.site/categories/my_me/</link>
+        <pubDate>Sun, 20 Apr 2025 11:15:21 +0800</pubDate>
+        
+        <guid>https://blog.hizhixia.site/categories/my_me/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/categories/my_me/nav.jpg" alt="Featured image of post MY_ME" /&gt;</description>
         </item>
         <item>
         <title>Math</title>
-        <link>http://localhost:1313/categories/math/</link>
+        <link>https://blog.hizhixia.site/categories/math/</link>
         <pubDate>Thu, 20 Feb 2025 00:40:47 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/math/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/math/nav.webp" alt="Featured image of post Math" /&gt;</description>
+        <guid>https://blog.hizhixia.site/categories/math/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/categories/math/nav.webp" alt="Featured image of post Math" /&gt;</description>
         </item>
         
     </channel>

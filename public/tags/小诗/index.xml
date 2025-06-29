@@ -2,18 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>小诗 on Zhixia&#39;s Blog</title>
-        <link>http://localhost:1313/tags/%E5%B0%8F%E8%AF%97/</link>
+        <link>https://blog.hizhixia.site/tags/%E5%B0%8F%E8%AF%97/</link>
         <description>Recent content in 小诗 on Zhixia&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zhixia</copyright>
-        <lastBuildDate>Sat, 10 May 2025 08:32:42 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%B0%8F%E8%AF%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 29 Jun 2025 10:53:46 +0800</lastBuildDate><atom:link href="https://blog.hizhixia.site/tags/%E5%B0%8F%E8%AF%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>孤独是一缕烟雾</title>
+        <link>https://blog.hizhixia.site/post/%E5%AD%A4%E7%8B%AC%E6%98%AF%E4%B8%80%E7%BC%95%E7%83%9F%E9%9B%BE/</link>
+        <pubDate>Sun, 29 Jun 2025 10:53:46 +0800</pubDate>
+        
+        <guid>https://blog.hizhixia.site/post/%E5%AD%A4%E7%8B%AC%E6%98%AF%E4%B8%80%E7%BC%95%E7%83%9F%E9%9B%BE/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E5%AD%A4%E7%8B%AC%E6%98%AF%E4%B8%80%E7%BC%95%E7%83%9F%E9%9B%BE/navigation.jpg" alt="Featured image of post 孤独是一缕烟雾" /&gt;&lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
+&lt;p&gt;孤独是一缕烟雾&lt;/p&gt;
+&lt;p&gt;它的来路模糊&lt;/p&gt;
+&lt;p&gt;去向恍惚&lt;/p&gt;
+&lt;p&gt;它在缥缈中由浓而淡&lt;/p&gt;
+&lt;p&gt;如初醒的眼眸中&lt;/p&gt;
+&lt;p&gt;水彩总是柔软&lt;/p&gt;
+&lt;p&gt;花色怎样鲜明&lt;/p&gt;
+&lt;p&gt;却留在纱外&lt;/p&gt;
+&lt;p&gt;我希望采下那样的一束花&lt;/p&gt;
+&lt;p&gt;如烟一般&lt;/p&gt;
+&lt;p&gt;在静谧中哀伤&lt;/p&gt;
+&lt;p&gt;在凄凉中彷徨&lt;/p&gt;
+&lt;p&gt;哪怕只采下一片花瓣&lt;/p&gt;
+&lt;p&gt;它将在清晨的薄雾中沉默&lt;/p&gt;
+&lt;p&gt;在模糊中安宁，而后&lt;/p&gt;
+&lt;p&gt;沾湿黎明的梦&lt;/p&gt;
+&lt;p&gt;它要在风中挥舞着烟雾&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>月夜</title>
-        <link>http://localhost:1313/post/%E6%9C%88%E5%A4%9C/</link>
+        <link>https://blog.hizhixia.site/post/%E6%9C%88%E5%A4%9C/</link>
         <pubDate>Sat, 10 May 2025 08:32:42 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E6%9C%88%E5%A4%9C/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E6%9C%88%E5%A4%9C/navigation.jpg" alt="Featured image of post 月夜" /&gt;&lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
+        <guid>https://blog.hizhixia.site/post/%E6%9C%88%E5%A4%9C/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E6%9C%88%E5%A4%9C/navigation.jpg" alt="Featured image of post 月夜" /&gt;&lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
 &lt;p&gt;宁静湖面的倒影&lt;/p&gt;
 &lt;p&gt;是夜空沉默的星辰&lt;/p&gt;
 &lt;p&gt;你在水面铺上石子&lt;/p&gt;
@@ -35,11 +61,11 @@
         </item>
         <item>
         <title>草儿长满山丘</title>
-        <link>http://localhost:1313/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/</link>
+        <link>https://blog.hizhixia.site/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/</link>
         <pubDate>Sat, 29 Mar 2025 15:07:31 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/navigation.jpg" alt="Featured image of post 草儿长满山丘" /&gt;&lt;p&gt;忧伤的色彩如油画一般。&lt;/p&gt;
+        <guid>https://blog.hizhixia.site/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/navigation.jpg" alt="Featured image of post 草儿长满山丘" /&gt;&lt;p&gt;忧伤的色彩如油画一般。&lt;/p&gt;
 &lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
 &lt;h2 id=&#34;草儿长满山丘&#34;&gt;草儿长满山丘
 &lt;/h2&gt;&lt;p&gt;草儿长满山丘，&lt;/p&gt;

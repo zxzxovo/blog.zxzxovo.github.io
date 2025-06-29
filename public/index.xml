@@ -2,18 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Zhixia&#39;s Blog</title>
-        <link>http://localhost:1313/</link>
+        <link>https://blog.hizhixia.site/</link>
         <description>Recent content on Zhixia&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zhixia</copyright>
-        <lastBuildDate>Sat, 21 Jun 2025 14:54:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 29 Jun 2025 10:53:46 +0800</lastBuildDate><atom:link href="https://blog.hizhixia.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>孤独是一缕烟雾</title>
+        <link>https://blog.hizhixia.site/post/%E5%AD%A4%E7%8B%AC%E6%98%AF%E4%B8%80%E7%BC%95%E7%83%9F%E9%9B%BE/</link>
+        <pubDate>Sun, 29 Jun 2025 10:53:46 +0800</pubDate>
+        
+        <guid>https://blog.hizhixia.site/post/%E5%AD%A4%E7%8B%AC%E6%98%AF%E4%B8%80%E7%BC%95%E7%83%9F%E9%9B%BE/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E5%AD%A4%E7%8B%AC%E6%98%AF%E4%B8%80%E7%BC%95%E7%83%9F%E9%9B%BE/navigation.jpg" alt="Featured image of post 孤独是一缕烟雾" /&gt;&lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
+&lt;p&gt;孤独是一缕烟雾&lt;/p&gt;
+&lt;p&gt;它的来路模糊&lt;/p&gt;
+&lt;p&gt;去向恍惚&lt;/p&gt;
+&lt;p&gt;它在缥缈中由浓而淡&lt;/p&gt;
+&lt;p&gt;如初醒的眼眸中&lt;/p&gt;
+&lt;p&gt;水彩总是柔软&lt;/p&gt;
+&lt;p&gt;花色怎样鲜明&lt;/p&gt;
+&lt;p&gt;却留在纱外&lt;/p&gt;
+&lt;p&gt;我希望采下那样的一束花&lt;/p&gt;
+&lt;p&gt;如烟一般&lt;/p&gt;
+&lt;p&gt;在静谧中哀伤&lt;/p&gt;
+&lt;p&gt;在凄凉中彷徨&lt;/p&gt;
+&lt;p&gt;哪怕只采下一片花瓣&lt;/p&gt;
+&lt;p&gt;它将在清晨的薄雾中沉默&lt;/p&gt;
+&lt;p&gt;在模糊中安宁，而后&lt;/p&gt;
+&lt;p&gt;沾湿黎明的梦&lt;/p&gt;
+&lt;p&gt;它要在风中挥舞着烟雾&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Android四大组件基础</title>
-        <link>http://localhost:1313/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/</link>
+        <link>https://blog.hizhixia.site/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Sat, 21 Jun 2025 14:54:32 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;img src="http://localhost:1313/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/nav.svg" alt="Featured image of post Android四大组件基础" /&gt;&lt;h1 id=&#34;android应用开发四大组件详解&#34;&gt;Android应用开发四大组件详解
+        <guid>https://blog.hizhixia.site/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/nav.svg" alt="Featured image of post Android四大组件基础" /&gt;&lt;h1 id=&#34;android应用开发四大组件详解&#34;&gt;Android应用开发四大组件详解
 &lt;/h1&gt;&lt;p&gt;Android应用开发中常使用系统提供的 &lt;strong&gt;四大组件&lt;/strong&gt; ： &lt;em&gt;Activity, Service, Broadcast Receiver, Content Provider&lt;/em&gt;。&lt;/p&gt;
 &lt;p&gt;近期学习 《Android 第一行代码》，在这里总结一下四大组件的基础用法，用以巩固。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1858,11 +1884,11 @@ Srvice主要有两种启动方式：&lt;/p&gt;
         </item>
         <item>
         <title>月夜</title>
-        <link>http://localhost:1313/post/%E6%9C%88%E5%A4%9C/</link>
+        <link>https://blog.hizhixia.site/post/%E6%9C%88%E5%A4%9C/</link>
         <pubDate>Sat, 10 May 2025 08:32:42 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E6%9C%88%E5%A4%9C/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E6%9C%88%E5%A4%9C/navigation.jpg" alt="Featured image of post 月夜" /&gt;&lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
+        <guid>https://blog.hizhixia.site/post/%E6%9C%88%E5%A4%9C/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E6%9C%88%E5%A4%9C/navigation.jpg" alt="Featured image of post 月夜" /&gt;&lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
 &lt;p&gt;宁静湖面的倒影&lt;/p&gt;
 &lt;p&gt;是夜空沉默的星辰&lt;/p&gt;
 &lt;p&gt;你在水面铺上石子&lt;/p&gt;
@@ -1884,11 +1910,11 @@ Srvice主要有两种启动方式：&lt;/p&gt;
         </item>
         <item>
         <title>某些洁癖</title>
-        <link>http://localhost:1313/post/%E6%9F%90%E4%BA%9B%E6%B4%81%E7%99%96/</link>
+        <link>https://blog.hizhixia.site/post/%E6%9F%90%E4%BA%9B%E6%B4%81%E7%99%96/</link>
         <pubDate>Wed, 23 Apr 2025 10:17:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E6%9F%90%E4%BA%9B%E6%B4%81%E7%99%96/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E6%9F%90%E4%BA%9B%E6%B4%81%E7%99%96/navigation.jpg" alt="Featured image of post 某些洁癖" /&gt;&lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
+        <guid>https://blog.hizhixia.site/post/%E6%9F%90%E4%BA%9B%E6%B4%81%E7%99%96/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E6%9F%90%E4%BA%9B%E6%B4%81%E7%99%96/navigation.jpg" alt="Featured image of post 某些洁癖" /&gt;&lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
 &lt;p&gt;你知道的，人应该是有名字的。&lt;/p&gt;
 &lt;p&gt;当你在人群中想要与谁交流，或者是传达信息时，你便叫出他的名字。或是使用文字时，你可以写上某个名字，这样你所希望的对象便能知道这是关于他的。名字是有这样的意义吧，能起到在人海中唤出某人的作用，也能为某个包含众多特质的有机生命体打上一个索引标签。&lt;/p&gt;
 &lt;p&gt;人的感情是能作用在许多事物上的，当然也包括名字。在大多数情况下，你的名字应该不是自己取的，那么，为你命名的人又是如何看待你的名字？名字是社会默认的，关于它的问题涉及到某些古老难缠的事情，绝不会有许多人喜欢。&lt;/p&gt;
@@ -1913,11 +1939,11 @@ Srvice主要有两种启动方式：&lt;/p&gt;
         </item>
         <item>
         <title>解构之二</title>
-        <link>http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/</link>
+        <link>https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/</link>
         <pubDate>Sun, 20 Apr 2025 11:15:21 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/navigation.jpg" alt="Featured image of post 解构之二" /&gt;&lt;h3 id=&#34;2025年4月7日&#34;&gt;2025年4月7日
+        <guid>https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%BA%8C/navigation.jpg" alt="Featured image of post 解构之二" /&gt;&lt;h3 id=&#34;2025年4月7日&#34;&gt;2025年4月7日
 &lt;/h3&gt;&lt;p&gt;我写过很多总结性的文字，多数都以“一路走到现在”之类的句子开头或结尾。而我熟知的人在生活中不断遇到新问题时，我面临的是没有改变过的问题。我与某人路上交谈甚久，他越走越远，我却停在原地。&lt;/p&gt;
 &lt;p&gt;我因何原因会是现在这种状况？
 因为我出身低微吗，因为我见识短浅吗，因为别人干扰吗？那我要怪罪于家庭学校政府社会乃至整个世界？
@@ -1937,11 +1963,11 @@ Srvice主要有两种启动方式：&lt;/p&gt;
         </item>
         <item>
         <title>Rust的函数式编程— 闭包</title>
-        <link>http://localhost:1313/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/</link>
+        <link>https://blog.hizhixia.site/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/</link>
         <pubDate>Tue, 01 Apr 2025 13:38:17 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/</guid>
-        <description>&lt;img src="http://localhost:1313/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.jpg" alt="Featured image of post Rust的函数式编程— 闭包" /&gt;&lt;p&gt;本节参考：&lt;/p&gt;
+        <guid>https://blog.hizhixia.site/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/rust%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B-%E9%97%AD%E5%8C%85/navigation.jpg" alt="Featured image of post Rust的函数式编程— 闭包" /&gt;&lt;p&gt;本节参考：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://course.rs/advance/functional-programing/closure.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Rust语言圣经&lt;/a&gt;&lt;/li&gt;
@@ -2323,11 +2349,11 @@ Srvice主要有两种启动方式：&lt;/p&gt;
         </item>
         <item>
         <title>冬至</title>
-        <link>http://localhost:1313/post/%E5%86%AC%E8%87%B3/</link>
+        <link>https://blog.hizhixia.site/post/%E5%86%AC%E8%87%B3/</link>
         <pubDate>Tue, 01 Apr 2025 13:37:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E5%86%AC%E8%87%B3/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E5%86%AC%E8%87%B3/navigation.jpg" alt="Featured image of post 冬至" /&gt;&lt;blockquote&gt;
+        <guid>https://blog.hizhixia.site/post/%E5%86%AC%E8%87%B3/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E5%86%AC%E8%87%B3/navigation.jpg" alt="Featured image of post 冬至" /&gt;&lt;blockquote&gt;
 &lt;p&gt;偶尔翻到四五年前写出的一些东西，能看出一些当时想要释放的情绪，不过都会被淹没的。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;一&#34;&gt;一
@@ -2364,11 +2390,11 @@ Srvice主要有两种启动方式：&lt;/p&gt;
         </item>
         <item>
         <title>解构之一</title>
-        <link>http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/</link>
+        <link>https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/</link>
         <pubDate>Tue, 01 Apr 2025 13:06:18 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/navigation.jpg" alt="Featured image of post 解构之一" /&gt;&lt;blockquote&gt;
+        <guid>https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E8%A7%A3%E6%9E%84%E4%B9%8B%E4%B8%80/navigation.jpg" alt="Featured image of post 解构之一" /&gt;&lt;blockquote&gt;
 &lt;p&gt;3月的最后一天凌晨，在压抑的情绪中所写的推文。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;最近几年我对事物的态度变了很多，最初是热情激进，之后是麻木冷淡，再到现在乱七八糟的各种情绪杂糅在一起，复杂且混乱。
@@ -2383,11 +2409,11 @@ Srvice主要有两种启动方式：&lt;/p&gt;
         </item>
         <item>
         <title>草儿长满山丘</title>
-        <link>http://localhost:1313/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/</link>
+        <link>https://blog.hizhixia.site/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/</link>
         <pubDate>Sat, 29 Mar 2025 15:07:31 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/navigation.jpg" alt="Featured image of post 草儿长满山丘" /&gt;&lt;p&gt;忧伤的色彩如油画一般。&lt;/p&gt;
+        <guid>https://blog.hizhixia.site/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E8%8D%89%E5%84%BF%E9%95%BF%E6%BB%A1%E5%B1%B1%E4%B8%98/navigation.jpg" alt="Featured image of post 草儿长满山丘" /&gt;&lt;p&gt;忧伤的色彩如油画一般。&lt;/p&gt;
 &lt;div style=&#34;font-family: NSimSun, &#39;Lato&#39;, var(--sys-font-family), var(--zh-font-family), sans-serif&#34;&gt;
 &lt;h2 id=&#34;草儿长满山丘&#34;&gt;草儿长满山丘
 &lt;/h2&gt;&lt;p&gt;草儿长满山丘，&lt;/p&gt;
@@ -2418,10 +2444,10 @@ Srvice主要有两种启动方式：&lt;/p&gt;
         </item>
         <item>
         <title>进制转换</title>
-        <link>http://localhost:1313/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</link>
+        <link>https://blog.hizhixia.site/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</link>
         <pubDate>Thu, 20 Feb 2025 00:40:47 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</guid>
+        <guid>https://blog.hizhixia.site/post/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</guid>
         <description>&lt;h1 id=&#34;进制表示法&#34;&gt;进制表示法
 &lt;/h1&gt;&lt;p&gt;计数时为了方便表示大的数量，因此采用进制表示法计数。&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#n进制计数法&lt;/span&gt;&lt;/p&gt;
@@ -2613,11 +2639,11 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>Clap的一些用法</title>
-        <link>http://localhost:1313/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/</link>
+        <link>https://blog.hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/</link>
         <pubDate>Wed, 12 Feb 2025 20:40:22 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/</guid>
-        <description>&lt;img src="http://localhost:1313/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg" alt="Featured image of post Clap的一些用法" /&gt;&lt;p&gt;Rust的 &lt;a class=&#34;link&#34; href=&#34;https://crates.io/crates/clap&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>https://blog.hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/navigation.svg" alt="Featured image of post Clap的一些用法" /&gt;&lt;p&gt;Rust的 &lt;a class=&#34;link&#34; href=&#34;https://crates.io/crates/clap&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Clap Crate&lt;/a&gt; 非常适用于开发命令行程序，它是一个“简单易用、高效且功能齐全的命令行参数解析器”。&lt;/p&gt;
 &lt;p&gt;Clap的作用在于帮助我们定义命令行工具的各种指令和用法，并解析用户使用的什么指令。之后我们只需要编写对应指令的功能代码即可。&lt;/p&gt;
 &lt;p&gt;在这里简单记录一下它的一些用法。&lt;/p&gt;
@@ -3083,11 +3109,11 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>再学一遍Git</title>
-        <link>http://localhost:1313/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/</link>
+        <link>https://blog.hizhixia.site/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/</link>
         <pubDate>Sat, 08 Feb 2025 20:25:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation.png" alt="Featured image of post 再学一遍Git" /&gt;&lt;p&gt;Git真的是非常重要了！！但我编码不多，用到Git的场景也很少，一段时间不用就会忘掉好多命令和用法QwQ。&lt;/p&gt;
+        <guid>https://blog.hizhixia.site/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E5%86%8D%E5%AD%A6%E4%B8%80%E9%81%8Dgit/navigation.png" alt="Featured image of post 再学一遍Git" /&gt;&lt;p&gt;Git真的是非常重要了！！但我编码不多，用到Git的场景也很少，一段时间不用就会忘掉好多命令和用法QwQ。&lt;/p&gt;
 &lt;p&gt;按照一般的工作流记录一遍使用Git的工作流（顺便水一篇blog），顺便当个备忘录或教程（？），不要再忘了！&lt;/p&gt;
 &lt;h2 id=&#34;配置git&#34;&gt;配置Git
 &lt;/h2&gt;&lt;hr&gt;
@@ -3619,11 +3645,11 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>许多日前的自由</title>
-        <link>http://localhost:1313/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E8%87%AA%E7%94%B1/</link>
+        <link>https://blog.hizhixia.site/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E8%87%AA%E7%94%B1/</link>
         <pubDate>Sat, 08 Feb 2025 02:18:14 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E8%87%AA%E7%94%B1/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E8%87%AA%E7%94%B1/flower1.jpg" alt="Featured image of post 许多日前的自由" /&gt;&lt;p&gt;青春对我来说是一种自由的感觉。从以前到现在，社会身份逐渐自由，思想灵魂逃离自由。&lt;/p&gt;
+        <guid>https://blog.hizhixia.site/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E8%87%AA%E7%94%B1/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E8%87%AA%E7%94%B1/flower1.jpg" alt="Featured image of post 许多日前的自由" /&gt;&lt;p&gt;青春对我来说是一种自由的感觉。从以前到现在，社会身份逐渐自由，思想灵魂逃离自由。&lt;/p&gt;
 &lt;p&gt;阴着却明亮的天，微凉的轻轻荡漾的风，在几棵柳树或橡树所在的地方，或跑或跳。
 以前这样的场景最能使我的情绪激荡，当时仅靠环境就可以对情绪施加各样的压力，产生各种奇妙的感觉。而现在少有这种感觉了，或许是我的情绪本身不再敏感，或许是有更大的压力使我来不及感受，或许二者都有。&lt;/p&gt;
 &lt;p&gt;最近某天我在一处公园的草地上散步，一不小心摔在了地上。
@@ -3634,11 +3660,11 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>许多日前的晚安</title>
-        <link>http://localhost:1313/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E6%99%9A%E5%AE%89/</link>
+        <link>https://blog.hizhixia.site/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E6%99%9A%E5%AE%89/</link>
         <pubDate>Sat, 08 Feb 2025 01:13:35 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E6%99%9A%E5%AE%89/</guid>
-        <description>&lt;img src="http://localhost:1313/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E6%99%9A%E5%AE%89/navigation.jpg" alt="Featured image of post 许多日前的晚安" /&gt;&lt;p&gt;坐在电脑前神游时无意翻到了以前不知何时写的一些文字。&lt;/p&gt;
+        <guid>https://blog.hizhixia.site/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E6%99%9A%E5%AE%89/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/%E8%AE%B8%E5%A4%9A%E6%97%A5%E5%89%8D%E7%9A%84%E6%99%9A%E5%AE%89/navigation.jpg" alt="Featured image of post 许多日前的晚安" /&gt;&lt;p&gt;坐在电脑前神游时无意翻到了以前不知何时写的一些文字。&lt;/p&gt;
 &lt;p&gt;今日来看往日，全是发疯，不过闲时看着倒是有些意思。随便找些搬运过来，刚好填补下空空如也的Blog。
 还有许多自己拍的觉得有些意思的图，拿来当封面，这样看起来不至于很单调 ( .&lt;/p&gt;
 &lt;h2 id=&#34;晚安&#34;&gt;晚安
@@ -3658,22 +3684,22 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>Hello Wrold</title>
-        <link>http://localhost:1313/post/hello-world/</link>
+        <link>https://blog.hizhixia.site/post/hello-world/</link>
         <pubDate>Thu, 30 Jan 2025 13:30:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/hello-world/</guid>
-        <description>&lt;img src="http://localhost:1313/post/hello-world/cover.jpg" alt="Featured image of post Hello Wrold" /&gt;&lt;h1 id=&#34;hello-world&#34;&gt;Hello World
+        <guid>https://blog.hizhixia.site/post/hello-world/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/post/hello-world/cover.jpg" alt="Featured image of post Hello Wrold" /&gt;&lt;h1 id=&#34;hello-world&#34;&gt;Hello World
 &lt;/h1&gt;&lt;p&gt;Welcome to my &lt;strong&gt;Blog&lt;/strong&gt; !!!&lt;/p&gt;
 &lt;p&gt;It was built with &lt;strong&gt;Hugo&lt;/strong&gt; and the theme &amp;ldquo;Stack&amp;rdquo;.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>About</title>
-        <link>http://localhost:1313/page/about/</link>
+        <link>https://blog.hizhixia.site/page/about/</link>
         <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/about/</guid>
-        <description>&lt;img src="http://localhost:1313/page/about/about.jpg" alt="Featured image of post About" /&gt;&lt;p&gt;
+        <guid>https://blog.hizhixia.site/page/about/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/page/about/about.jpg" alt="Featured image of post About" /&gt;&lt;p&gt;
 点击这里访问： 
 &lt;a href=&#34;https://keyserver.ubuntu.com/pks/lookup?search=zhixiaovo%40gmail.com&amp;fingerprint=on&amp;op=index&#34; style=&#34;color: DodgerBlue;&#34;&#34;&gt; 我的GPG公钥 &lt;/a&gt;
 &lt;/p&gt;
@@ -3702,18 +3728,18 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>Archives</title>
-        <link>http://localhost:1313/page/archives/</link>
+        <link>https://blog.hizhixia.site/page/archives/</link>
         <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/archives/</guid>
+        <guid>https://blog.hizhixia.site/page/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Links</title>
-        <link>http://localhost:1313/page/links/</link>
+        <link>https://blog.hizhixia.site/page/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/links/</guid>
+        <guid>https://blog.hizhixia.site/page/links/</guid>
         <description>&lt;h2 id=&#34;links-here&#34;&gt;Links Here!
 &lt;/h2&gt;&lt;p&gt;欢迎联系我添加 &lt;em&gt;友链&lt;/em&gt; 喵 OvO ！&lt;/p&gt;
 &lt;p&gt;或者直接 &lt;em&gt;Pull Request&lt;/em&gt; 或 &lt;em&gt;Issue&lt;/em&gt; ！&lt;/p&gt;
@@ -3721,10 +3747,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>Search</title>
-        <link>http://localhost:1313/page/search/</link>
+        <link>https://blog.hizhixia.site/page/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/search/</guid>
+        <guid>https://blog.hizhixia.site/page/search/</guid>
         <description></description>
         </item>
         

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on Zhixia&#39;s Blog</title>
-        <link>http://localhost:1313/page/</link>
+        <link>https://blog.hizhixia.site/page/</link>
         <description>Recent content in Pages on Zhixia&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zhixia</copyright>
-        <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.hizhixia.site/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>About</title>
-        <link>http://localhost:1313/page/about/</link>
+        <link>https://blog.hizhixia.site/page/about/</link>
         <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/about/</guid>
-        <description>&lt;img src="http://localhost:1313/page/about/about.jpg" alt="Featured image of post About" /&gt;&lt;p&gt;
+        <guid>https://blog.hizhixia.site/page/about/</guid>
+        <description>&lt;img src="https://blog.hizhixia.site/page/about/about.jpg" alt="Featured image of post About" /&gt;&lt;p&gt;
 点击这里访问： 
 &lt;a href=&#34;https://keyserver.ubuntu.com/pks/lookup?search=zhixiaovo%40gmail.com&amp;fingerprint=on&amp;op=index&#34; style=&#34;color: DodgerBlue;&#34;&#34;&gt; 我的GPG公钥 &lt;/a&gt;
 &lt;/p&gt;
@@ -42,18 +42,18 @@
         </item>
         <item>
         <title>Archives</title>
-        <link>http://localhost:1313/page/archives/</link>
+        <link>https://blog.hizhixia.site/page/archives/</link>
         <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/archives/</guid>
+        <guid>https://blog.hizhixia.site/page/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Links</title>
-        <link>http://localhost:1313/page/links/</link>
+        <link>https://blog.hizhixia.site/page/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/links/</guid>
+        <guid>https://blog.hizhixia.site/page/links/</guid>
         <description>&lt;h2 id=&#34;links-here&#34;&gt;Links Here!
 &lt;/h2&gt;&lt;p&gt;欢迎联系我添加 &lt;em&gt;友链&lt;/em&gt; 喵 OvO ！&lt;/p&gt;
 &lt;p&gt;或者直接 &lt;em&gt;Pull Request&lt;/em&gt; 或 &lt;em&gt;Issue&lt;/em&gt; ！&lt;/p&gt;
@@ -61,10 +61,10 @@
         </item>
         <item>
         <title>Search</title>
-        <link>http://localhost:1313/page/search/</link>
+        <link>https://blog.hizhixia.site/page/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/search/</guid>
+        <guid>https://blog.hizhixia.site/page/search/</guid>
         <description></description>
         </item>
         
