@@ -8,7 +8,7 @@ categories = ["Daily", "Texts"]
 tags = ["Daily", "呓语", "小说类似体"]
 +++
 
-<div style="font-family: NSimSun, 'Lato', var(--sys-font-family), var(--zh-font-family), sans-serif">
+<div style="font-family: NSimSun, 'Lato',var(--font-songti), var(--sys-font-family), var(--zh-font-family), sans-serif">
 
 你知道的，人应该是有名字的。
 
@@ -49,3 +49,5 @@ tags = ["Daily", "呓语", "小说类似体"]
 她感觉脸上的肌肉有些僵硬，眼睛有一些酸，凉凉的后背突然有些刺痛。
 
 “同学到你了，你叫什么名字。”
+
+</div>

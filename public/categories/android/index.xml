@@ -17,8 +17,7 @@
 &lt;/h1&gt;&lt;p&gt;Android应用开发中常使用系统提供的 &lt;strong&gt;四大组件&lt;/strong&gt; ： &lt;em&gt;Activity, Service, Broadcast Receiver, Content Provider&lt;/em&gt;。&lt;/p&gt;
 &lt;p&gt;近期学习 《Android 第一行代码》，在这里总结一下四大组件的基础用法，用以巩固。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;部分代码使用AI生成。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;部分代码使用AI生成。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;android应用工作原理&#34;&gt;Android应用工作原理
 &lt;/h2&gt;&lt;h3 id=&#34;应用启动流程&#34;&gt;应用启动流程
 &lt;/h3&gt;&lt;p&gt;Android应用程序 &lt;strong&gt;启动&lt;/strong&gt; 的过程与PC略有不同。在Android设备上，当用户在Launcher（桌面）点击应用图标时：&lt;/p&gt;

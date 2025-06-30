@@ -17,8 +17,7 @@
 &lt;/h1&gt;&lt;p&gt;Android应用开发中常使用系统提供的 &lt;strong&gt;四大组件&lt;/strong&gt; ： &lt;em&gt;Activity, Service, Broadcast Receiver, Content Provider&lt;/em&gt;。&lt;/p&gt;
 &lt;p&gt;近期学习 《Android 第一行代码》，在这里总结一下四大组件的基础用法，用以巩固。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;部分代码使用AI生成。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;部分代码使用AI生成。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;android应用工作原理&#34;&gt;Android应用工作原理
 &lt;/h2&gt;&lt;h3 id=&#34;应用启动流程&#34;&gt;应用启动流程
 &lt;/h3&gt;&lt;p&gt;Android应用程序 &lt;strong&gt;启动&lt;/strong&gt; 的过程与PC略有不同。在Android设备上，当用户在Launcher（桌面）点击应用图标时：&lt;/p&gt;
@@ -2300,8 +2299,7 @@ $$&lt;/p&gt;
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;这里首先介绍使用的是 &lt;strong&gt;通用表示法&lt;/strong&gt;，假设我们要将 &lt;strong&gt;n&lt;/strong&gt; 进制数转换 &lt;strong&gt;m&lt;/strong&gt; 进制数，为使用通用表示法，&lt;strong&gt;首先要求&lt;/strong&gt; 我们能把n进制表示法的&lt;strong&gt;n个数字以及这个n，用m进制表示&lt;/strong&gt;（比如十进制转换为二进制时，需要知道0到10的二进制表示）。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;不要问为什么十进制表示法没这个要求，因为我们已经能把二进制，八进制，十六进制以及许多其他进制用十进制数字表示了&lt;/strong&gt; 0v0 。回头看看上方通用表示法下面的 #转换为任意进制 的说明。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tips&lt;/strong&gt;: n进制的乘法可以使用竖式计算（各位相乘，各行累加，进位）&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Tips&lt;/strong&gt;: n进制的乘法可以使用竖式计算（各位相乘，各行累加，进位）&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;以下为一个通用表示法的示例，由于要转换为m进制，就要学习n进制的乘法对于人来说比较麻烦，因此只做演示。
 但对于常用的 &lt;strong&gt;二进制和十进制的转换&lt;/strong&gt; 来说，已经足够了。&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;art-tags&#34;&gt;#十进制转换为二进制&lt;/span&gt;&lt;/p&gt;
@@ -2484,15 +2482,13 @@ $$&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;两种构建方式的区别主要是：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Builder API&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Builder API&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;链式调用&lt;/strong&gt;的方式构建程序。&lt;/li&gt;
 &lt;li&gt;由于是 &lt;strong&gt;链式调用&lt;/strong&gt;，代码 &lt;strong&gt;很长很复杂&lt;/strong&gt;，可复用度较低。但在命令行参数需要经常变动调整时比较方便，加减几个函数调用就行。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Derive API&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Derive API&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;声明式&lt;/strong&gt;，通过定义命令和参数对应的 &lt;code&gt;Strut&lt;/code&gt; 和 &lt;code&gt;Enum&lt;/code&gt; 并在上面使用 &lt;strong&gt;属性宏&lt;/strong&gt; 构建程序。&lt;/li&gt;
 &lt;li&gt;使用 &lt;strong&gt;声明式&lt;/strong&gt; 构建，代码 &lt;strong&gt;直观简洁&lt;/strong&gt;，方便理解和维护。适合参数和命令比较稳定的命令行程序。&lt;/li&gt;
@@ -2502,8 +2498,7 @@ $$&lt;/p&gt;
     &gt;Mixing Builder and Derive APIs&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;使用方式&#34;&gt;使用方式
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;官方给的Git示例比较好，推荐查看：&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;官方给的Git示例比较好，推荐查看：&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/clap-rs/clap/blob/master/examples/git.rs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;git-Builder API&lt;/a&gt;&lt;/li&gt;

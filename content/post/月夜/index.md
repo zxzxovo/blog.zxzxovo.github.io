@@ -8,7 +8,7 @@ categories = ["Daily", "Texts"]
 tags = ["Daily", "呓语", "散文诗类似体", "小诗"]
 +++
 
-<div style="font-family: NSimSun, 'Lato', var(--sys-font-family), var(--zh-font-family), sans-serif">
+<div style="font-family: NSimSun, 'Lato',var(--font-songti), var(--sys-font-family), var(--zh-font-family), sans-serif">
 
 宁静湖面的倒影
 
@@ -46,3 +46,5 @@ tags = ["Daily", "呓语", "散文诗类似体", "小诗"]
 看它在另一片时空反射太阳的光
 
 我只愿如这花瓣一样
+
+</div>

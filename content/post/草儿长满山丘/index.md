@@ -10,7 +10,7 @@ tags = ["Daily", "呓语", "散文诗类似体", "小诗"]
 
 忧伤的色彩如油画一般。
 
-<div style="font-family: NSimSun, 'Lato', var(--sys-font-family), var(--zh-font-family), sans-serif">
+<div style="font-family: NSimSun, 'Lato',var(--font-songti), var(--sys-font-family), var(--zh-font-family), sans-serif">
 
 ## 草儿长满山丘
 

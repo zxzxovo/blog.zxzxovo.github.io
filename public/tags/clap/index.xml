@@ -54,15 +54,13 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;两种构建方式的区别主要是：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Builder API&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Builder API&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;链式调用&lt;/strong&gt;的方式构建程序。&lt;/li&gt;
 &lt;li&gt;由于是 &lt;strong&gt;链式调用&lt;/strong&gt;，代码 &lt;strong&gt;很长很复杂&lt;/strong&gt;，可复用度较低。但在命令行参数需要经常变动调整时比较方便，加减几个函数调用就行。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Derive API&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Derive API&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;声明式&lt;/strong&gt;，通过定义命令和参数对应的 &lt;code&gt;Strut&lt;/code&gt; 和 &lt;code&gt;Enum&lt;/code&gt; 并在上面使用 &lt;strong&gt;属性宏&lt;/strong&gt; 构建程序。&lt;/li&gt;
 &lt;li&gt;使用 &lt;strong&gt;声明式&lt;/strong&gt; 构建，代码 &lt;strong&gt;直观简洁&lt;/strong&gt;，方便理解和维护。适合参数和命令比较稳定的命令行程序。&lt;/li&gt;
@@ -72,8 +70,7 @@
     &gt;Mixing Builder and Derive APIs&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;使用方式&#34;&gt;使用方式
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;官方给的Git示例比较好，推荐查看：&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;官方给的Git示例比较好，推荐查看：&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/clap-rs/clap/blob/master/examples/git.rs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;git-Builder API&lt;/a&gt;&lt;/li&gt;

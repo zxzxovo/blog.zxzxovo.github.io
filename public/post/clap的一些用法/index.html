@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://blog.hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Clap的一些用法">
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Clap的一些用法">
 <meta property='og:description' content="用Clap快速编写命令行程序">
 <meta property='og:url' content='https://blog.hizhixia.site/post/clap%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/'>
 <meta property='og:site_name' content='Zhixia&#39;s Blog'>
@@ -35,6 +35,10 @@
 <meta name="baidu_union_verify" content="407445121ac50946633255d239d9d13d">
 
 <style type="text/css">
+    :root {
+        --font-songti: "Libre Bodoni", "Perpetua", "Noto Serif SC", Georgia, "Nimbus Roman No9 L", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun, SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU, serif;
+
+    }
     .menu-social svg, #main-menu-li-svg-map {
         fill: currentColor;
     }
@@ -516,15 +520,13 @@
 </div>
 </div><p>两种构建方式的区别主要是：</p>
 <blockquote>
-<p>Builder API</p>
-</blockquote>
+<p>Builder API</p></blockquote>
 <ul>
 <li><strong>链式调用</strong>的方式构建程序。</li>
 <li>由于是 <strong>链式调用</strong>，代码 <strong>很长很复杂</strong>，可复用度较低。但在命令行参数需要经常变动调整时比较方便，加减几个函数调用就行。</li>
 </ul>
 <blockquote>
-<p>Derive API</p>
-</blockquote>
+<p>Derive API</p></blockquote>
 <ul>
 <li><strong>声明式</strong>，通过定义命令和参数对应的 <code>Strut</code> 和 <code>Enum</code> 并在上面使用 <strong>属性宏</strong> 构建程序。</li>
 <li>使用 <strong>声明式</strong> 构建，代码 <strong>直观简洁</strong>，方便理解和维护。适合参数和命令比较稳定的命令行程序。</li>
@@ -534,8 +536,7 @@
     >Mixing Builder and Derive APIs</a></p>
 <h1 id="使用方式">使用方式
 </h1><blockquote>
-<p>官方给的Git示例比较好，推荐查看：</p>
-</blockquote>
+<p>官方给的Git示例比较好，推荐查看：</p></blockquote>
 <ul>
 <li><a class="link" href="https://github.com/clap-rs/clap/blob/master/examples/git.rs"  target="_blank" rel="noopener"
     >git-Builder API</a></li>
